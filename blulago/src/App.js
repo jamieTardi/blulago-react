@@ -1,9 +1,12 @@
-
+import GlobalStyles from './GlobalStyles'
+import NavBar from './components/NavBar'
 
 function App() {
   return (
     <div className="App">
-      <h1>Test</h1>
+      <GlobalStyles/>
+      <NavBar />
+      
     </div>
   );
 }
