@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import locationPic from '../assets/location.png'
+import Driving from '../assets/driving.jpg'
+
 
 
 const Location = () => {
@@ -13,11 +15,11 @@ const Location = () => {
 Total Drive time from Calais is about 3 hours 30 mins at a leisurely pace in a van</p>
             </LocationPic>
             <LocationPic>
-
+            <img src={Driving} alt="Driving pic" />
             </LocationPic>
             </FlexPic>
             <LocationContainer>
-            <img src={locationPic} alt=""/>
+            <img src={locationPic} alt="Map"/>
 
             </LocationContainer>
             
@@ -60,7 +62,13 @@ p{
 h4{
     color: #595959;
 font-family: 'Lobster Two', cursive;
-margin-bottom: 1rem;
+margin: 1rem 0rem;
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
 }
 
 
