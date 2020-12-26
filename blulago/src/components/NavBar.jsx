@@ -2,6 +2,7 @@ import React from 'react'
 import logo from '../assets/blulagoLogo.svg'
 import styled from 'styled-components'
 import Toggle from './Toggle'
+import {Link} from 'react-router-dom'
 
 const NavBar = () => {
     return (
@@ -11,21 +12,25 @@ const NavBar = () => {
                 <StyledLogo src={logo} alt="logo"/>
                 </StyledDiv>
                 <StyledUl>
+                    <Link to="/">
                 <Toggle title="Home">
                     <ListAndLine >
                     <StyledLine  />
                     </ListAndLine>
                     </Toggle>
+                    </Link>
                     <Toggle title="Gallery">
                     <ListAndLine >
                     <StyledLine  />
                     </ListAndLine>
                     </Toggle>
+                    <Link to="shopHome">
                     <Toggle title="Online Booking">
                     <ListAndLine >
                     <StyledLine  />
                     </ListAndLine>
                     </Toggle>
+                    </Link>
                     <Toggle title="Facilities">
                     <ListAndLine >
                     <StyledLine  />

@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Lake from '../assets/lake-pic-hero.jpeg'
 import LakeTwo from '../assets/picture6.JPG'
+import { Link } from 'react-router-dom'
 
 
 
@@ -22,7 +23,7 @@ const AboutUs = () => {
                  assumenda at veritatis vero harum obcaecati numquam quos quia. 
                  Similique adipisci id maxime illum deleniti ipsam distinctio.
                 </p>
-                <button>Contanct Us</button>
+                <Link to=""> <button>Contanct Us</button></Link>
             </AboutUsDiv >
             <div>
             <AboutUsPic>
