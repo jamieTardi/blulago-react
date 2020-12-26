@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
       font-family: 'Roboto', sans-serif;
   }
 
-  p {
+  p, li {
       color: #595959
   }
 

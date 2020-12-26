@@ -1,40 +1,46 @@
 import React from 'react'
 import logo from '../assets/blulagoLogo.svg'
 import styled from 'styled-components'
+import Toggle from './Toggle'
 
 const NavBar = () => {
     return (
         <div>
             <StyledNav>
                 <StyledDiv>
-                <img src={logo} alt="logo"/>
+                <StyledLogo src={logo} alt="logo"/>
                 </StyledDiv>
                 <StyledUl>
-
-                    <ListAndLine>
-                    <li>Home</li>
-                    <StyledLine />
+                <Toggle title="Home">
+                    <ListAndLine >
+                    <StyledLine  />
                     </ListAndLine>
-                    <ListAndLine>
-                    <li>Gallery</li>
-                    <StyledLine />
+                    </Toggle>
+                    <Toggle title="Gallery">
+                    <ListAndLine >
+                    <StyledLine  />
                     </ListAndLine>
-                    <ListAndLine>   
-                    <li>Online Booking</li>
-                    <StyledLine/>
+                    </Toggle>
+                    <Toggle title="Online Booking">
+                    <ListAndLine >
+                    <StyledLine  />
                     </ListAndLine>
-                    <ListAndLine> 
-                    <li>Facilities</li>
-                    <StyledLine/>
-                    </ListAndLine> 
-                    <ListAndLine> 
-                    <li>Rules</li>
-                    <StyledLine/>
-                    </ListAndLine> 
-                    <ListAndLine> 
-                    <li>Contact Us</li>
-                    <StyledLine/>
-                    </ListAndLine> 
+                    </Toggle>
+                    <Toggle title="Facilities">
+                    <ListAndLine >
+                    <StyledLine  />
+                    </ListAndLine>
+                    </Toggle> 
+                    <Toggle title="Rules">
+                    <ListAndLine >
+                    <StyledLine  />
+                    </ListAndLine>
+                    </Toggle>  
+                    <Toggle title="Contact Us">
+                    <ListAndLine >
+                    <StyledLine  />
+                    </ListAndLine>
+                    </Toggle>   
                 </StyledUl>
             </StyledNav>
             
@@ -56,6 +62,11 @@ width: 20vw
 
 `
 
+const StyledLogo = styled.img`
+min-width: 100%;
+min-height: 100%
+`
+
 const StyledUl = styled.ul`
 
 display: flex;
@@ -63,19 +74,24 @@ justify-content: center;
 align-items: center;
 margin-right: 4rem;
 gap: 1rem;
+.pointer{
+    cursor: pointer;
+}
 `
 
 const StyledLine = styled.div`
-
-    border: 2px solid #18DDEB;
+border: 2px solid #18DDEB;
+    cursor: pointer;
     height: 0;
-    border-radius: 5px
+    border-radius: 5px;
+   
     
     `
 const ListAndLine = styled.div`
 display: flex;
 flex-direction: column;
 gap: 0.3rem;
+cursor: pointer;
 
 `
 
