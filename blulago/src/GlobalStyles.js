@@ -10,7 +10,9 @@ const GlobalStyle = createGlobalStyle`
   html{
       font-size: 120%;
       font-family: 'Roboto', sans-serif;
-      background: #eeeeee
+      background: #eeeeee;
+      width: 100vw;
+      overflow-x: hidden;
   }
 
   p, li {
