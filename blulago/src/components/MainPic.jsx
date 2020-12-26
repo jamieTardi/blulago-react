@@ -9,7 +9,7 @@ const MainPic = () => {
             <h2><span>Blu</span> Lago</h2>
             <h3>Experience France’s best fishing</h3>
             <h3>A huge fish stock and brand new facilities</h3>
-            <StyledButton>Book Now!</StyledButton>
+            <button>Book Now!</button>
             </StyledHeroText>
            <StyledHero src={Hero} alt=""/>
         </StyledMain>
@@ -18,21 +18,6 @@ const MainPic = () => {
 
 const StyledMain = styled.div`
 position: relative;
-`
-
-const StyledButton = styled.button`
-padding: 0.5rem 1rem;
-margin-top: 1rem;
-background: transparent;
-color: #18DDEB;
-font-size: 1.5rem;
-border: 2px solid #18DDEB;
-transition: all 0.75s ease;
-&:hover{
-background: #18DDEB;
-cursor: pointer;
-color: white;
-}
 `
 
 const StyledHero = styled.img`

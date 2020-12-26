@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
   html{
       font-size: 120%;
       font-family: 'Roboto', sans-serif;
+      background: #eeeeee
   }
 
   p, li {
@@ -18,11 +19,13 @@ const GlobalStyle = createGlobalStyle`
 
   h1{
       font-size: 4rem;
+      
   }
 
   h2{
         font-size: 3rem;
-        color: white
+        color: white;
+        font-family: 'Lobster Two', cursive;
   }
   h3{
       color: white;
@@ -35,7 +38,20 @@ const GlobalStyle = createGlobalStyle`
   li{
       list-style-type: none;
   }
- 
+  button{
+    padding: 0.5rem 1rem;
+margin-top: 1rem;
+background: transparent;
+color: #18DDEB;
+font-size: 1.5rem;
+border: 2px solid #18DDEB;
+transition: all 0.75s ease;
+&:hover{
+background: #18DDEB;
+cursor: pointer;
+color: white;
+}
+  }
 
 `
 
