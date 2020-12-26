@@ -21,7 +21,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h2{
-        font-size: 3rem
+        font-size: 3rem;
+        color: white
+  }
+  h3{
+      color: white;
   }
 
   a{
@@ -31,9 +35,7 @@ const GlobalStyle = createGlobalStyle`
   li{
       list-style-type: none;
   }
-  nav{
-      margin: 0rem 2rem;
-  }
+ 
 
 `
 
