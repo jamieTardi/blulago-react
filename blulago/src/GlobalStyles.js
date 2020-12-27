@@ -32,6 +32,8 @@ const GlobalStyle = createGlobalStyle`
   h3{
       color: white;
   }
+
+  
   h6{
       font-size: 0.6rem;
       color: #595959

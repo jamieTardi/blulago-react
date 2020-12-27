@@ -3,6 +3,8 @@ import logo from '../assets/blulagoLogo.svg'
 import styled from 'styled-components'
 import Toggle from './Toggle'
 import {Link} from 'react-router-dom'
+import {ShoppingCart} from '@material-ui/icons/';
+import {IconButton, Badge} from '@material-ui/core'
 
 const NavBar = () => {
     return (
@@ -46,7 +48,12 @@ const NavBar = () => {
                     <StyledLine  />
                     </ListAndLine>
                     </Toggle>   
+                    <IconButton component={Link}  to="/cart" aria-label="Show Cart Items" color="white" >
+                    <Badge badgeContent="1" color="secondary"></Badge>
+                    <ShoppingCart className="cart"/>
+                    </IconButton>
                 </StyledUl>
+                
             </StyledNav>
             
         </div>
@@ -79,6 +86,9 @@ justify-content: center;
 align-items: center;
 margin-right: 4rem;
 gap: 1rem;
+.cart{
+    margin-left: 0rem;
+}
 .pointer{
     cursor: pointer;
 }
