@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Cart = () => {
+const Gallery = () => {
     return (
         <div>
-            <p>Cart</p>
+            <p>gallery</p>
         </div>
     )
 }
 
-export default Cart
+export default Gallery

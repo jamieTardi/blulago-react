@@ -21,11 +21,13 @@ const NavBar = () => {
                     </ListAndLine>
                     </Toggle>
                     </Link>
+                    <Link to="/gallery">
                     <Toggle title="Gallery">
                     <ListAndLine >
                     <StyledLine  />
                     </ListAndLine>
                     </Toggle>
+                    </Link>
                     <Link to="shopHome">
                     <Toggle title="Online Booking">
                     <ListAndLine >
@@ -48,7 +50,7 @@ const NavBar = () => {
                     <StyledLine  />
                     </ListAndLine>
                     </Toggle>   
-                    <IconButton component={Link}  to="/cart" aria-label="Show Cart Items" color="white" >
+                    <IconButton component={Link}  to="cart" aria-label="Show Cart Items" color="white" >
                     <Badge badgeContent="1" color="secondary"></Badge>
                     <ShoppingCart className="cart"/>
                     </IconButton>
