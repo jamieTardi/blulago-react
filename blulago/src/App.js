@@ -21,8 +21,8 @@ function App() {
 }
 
 
-  const handleAddToCart = (productId, quantity, arrival, departure) => {
-    setCart([...cart, {name: productId, quantity, arrival, departure}])
+  const handleAddToCart = (productId, quantity) => {
+    setCart([...cart, {name: productId, quantity}])
   }
 
   useEffect(() => {fetchHolidays()},[])

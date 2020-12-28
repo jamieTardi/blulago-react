@@ -31,14 +31,14 @@ console.log(holidays)
         <CardContainer>
             {holidays.map((holiday) => (
                 <Card key={holiday.id}>
-                    <h4>{holiday.name}</h4>
+                    <h4>Lake exclusive booking for 2022</h4>
                     <img src={holiday.media.source} alt="fishing pic"/>
                     <div>
-                    <p className="dropDwn arrivalDepart">Arrival Date <br/><span>{holiday.name}</span></p>
+                    <p className="dropDwn arrivalDepart">Dates <br/><span>{holiday.name}</span></p>
                     </div>
                     <h4 className="dropDwn deposit">Deposit Price <br/><span>{holiday.price.formatted_with_symbol}</span></h4>
                     <p className="dropDwn deposit" style={holiday.quantity > 0 ? {color: 'green'} : {color: 'red'}}>Available <br/><span>{holiday.quantity ? 'Yes' : 'No'}</span></p>
-                    <button onClick={() => handleAddToCart(holiday.name, 1, holiday.arrival, holiday.departure)} style={holiday.quantity > 0 ? {opacity: 1} : {opacity: 0, pointerEvents: 'none'}}>Add to Cart</button>
+                    <button onClick={() => handleAddToCart(holiday.name, 1)} style={holiday.quantity > 0 ? {opacity: 1} : {opacity: 0, pointerEvents: 'none'}}>Add to Cart</button>
                 </Card>
     ))}
     </CardContainer>
