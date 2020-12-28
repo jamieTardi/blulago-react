@@ -4,7 +4,10 @@ import styled from 'styled-components'
 import Footer from '../components/Footer'
 
 
-const ShopHome = () => {
+const ShopHome = ({cart, handleAddToCart}) => {
+
+
+
 const shopItems = [{
     name: 'Lake Exclusive Booking',
     arrival: '02/08/2020',
@@ -61,6 +64,8 @@ const shopItems = [{
 },
 ]
 
+
+
     return (
         <>
         <BookingBlurb>
@@ -90,7 +95,7 @@ const shopItems = [{
                     </div>
                     <h4 className="dropDwn deposit">Deposit Price <br/><span>{holiday.price}</span></h4>
                     <p className="dropDwn deposit" style={holiday.avalible > 0 ? {color: 'green'} : {color: 'red'}}>Available <br/><span>{holiday.avalible ? 'Yes' : 'No'}</span></p>
-                    <button style={holiday.avalible > 0 ? {opacity: 1} : {opacity: 0, pointerEvents: 'none'}}>Add to Cart</button>
+                    <button onClick={() => handleAddToCart(holiday.name, 1, holiday.arrival, holiday.departure)} style={holiday.avalible > 0 ? {opacity: 1} : {opacity: 0, pointerEvents: 'none'}}>Add to Cart</button>
                 </Card>
     ))}
     </CardContainer>

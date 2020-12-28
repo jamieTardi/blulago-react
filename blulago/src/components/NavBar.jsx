@@ -6,7 +6,8 @@ import {Link} from 'react-router-dom'
 import {ShoppingCart} from '@material-ui/icons/';
 import {IconButton, Badge} from '@material-ui/core'
 
-const NavBar = () => {
+const NavBar = ({cart}) => {
+    const numberItems = cart.length
     return (
         <div>
             <StyledNav>
@@ -50,8 +51,8 @@ const NavBar = () => {
                     <StyledLine  />
                     </ListAndLine>
                     </Toggle>   
-                    <IconButton component={Link}  to="cart" aria-label="Show Cart Items" color="white" >
-                    <Badge badgeContent="1" color="secondary"></Badge>
+                    <IconButton component={Link}  to="cart" aria-label="Show Cart Items" color="primary" >
+                    <Badge badgeContent={numberItems} color="secondary"></Badge>
                     <ShoppingCart className="cart"/>
                     </IconButton>
                 </StyledUl>
