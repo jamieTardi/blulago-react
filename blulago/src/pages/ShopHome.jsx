@@ -1,68 +1,12 @@
 import React from 'react'
-import { v4 as uuidv4 } from 'uuid';
 import styled from 'styled-components'
 import Footer from '../components/Footer'
 
 
-const ShopHome = ({cart, handleAddToCart}) => {
+const ShopHome = ({cart, handleAddToCart, holidays}) => {
 
+console.log(holidays)
 
-
-const shopItems = [{
-    name: 'Lake Exclusive Booking',
-    arrival: '02/08/2020',
-    departure: '09/08/2020',
-    picture:  'https://upload.wikimedia.org/wikipedia/commons/d/d1/Mount_Everest_as_seen_from_Drukair2_PLW_edit.jpg',
-    price: '£800',
-    avalible: 1,
-    id: uuidv4()
-},
-{
-    name: 'Lake Exclusive Booking',
-    arrival: '09/08/2020',
-    departure: '16/08/2020',
-    picture:  'https://upload.wikimedia.org/wikipedia/commons/d/d1/Mount_Everest_as_seen_from_Drukair2_PLW_edit.jpg',
-    price: '£800',
-    avalible: 0,
-    id: uuidv4()
-},
-{
-    name: 'Lake Exclusive Booking',
-    arrival: '09/08/2020',
-    departure: '16/08/2020',
-    picture:  'https://upload.wikimedia.org/wikipedia/commons/d/d1/Mount_Everest_as_seen_from_Drukair2_PLW_edit.jpg',
-    price: '£800',
-    avalible: 0,
-    id: uuidv4()
-},
-{
-    name: 'Lake Exclusive Booking',
-    arrival: '09/08/2020',
-    departure: '16/08/2020',
-    picture:  'https://upload.wikimedia.org/wikipedia/commons/d/d1/Mount_Everest_as_seen_from_Drukair2_PLW_edit.jpg',
-    price: '£800',
-    avalible: 1,
-    id: uuidv4()
-},
-{
-    name: 'Lake Exclusive Booking',
-    arrival: '09/08/2020',
-    departure: '16/08/2020',
-    picture:  'https://upload.wikimedia.org/wikipedia/commons/d/d1/Mount_Everest_as_seen_from_Drukair2_PLW_edit.jpg',
-    price: '£800',
-    avalible: 0,
-    id: uuidv4()
-},
-{
-    name: 'Lake Exclusive Booking',
-    arrival: '09/08/2020',
-    departure: '16/08/2020',
-    picture:  'https://upload.wikimedia.org/wikipedia/commons/d/d1/Mount_Everest_as_seen_from_Drukair2_PLW_edit.jpg',
-    price: '£800',
-    avalible: 1,
-    id: uuidv4()
-},
-]
 
 
 
@@ -85,17 +29,16 @@ const shopItems = [{
             </BookingBlurb>
         <ShopContainer>
         <CardContainer>
-            {shopItems.map((holiday) => (
+            {holidays.map((holiday) => (
                 <Card key={holiday.id}>
                     <h4>{holiday.name}</h4>
-                    <img src={holiday.picture} alt="fishing pic"/>
+                    <img src={holiday.media.source} alt="fishing pic"/>
                     <div>
-                    <p className="dropDwn arrivalDepart">Arrival Date <br/><span>{holiday.arrival}</span></p>
-                    <p className="dropDwn arrivalDepart">Departure Date <br/><span>{holiday.departure}</span></p>
+                    <p className="dropDwn arrivalDepart">Arrival Date <br/><span>{holiday.name}</span></p>
                     </div>
-                    <h4 className="dropDwn deposit">Deposit Price <br/><span>{holiday.price}</span></h4>
-                    <p className="dropDwn deposit" style={holiday.avalible > 0 ? {color: 'green'} : {color: 'red'}}>Available <br/><span>{holiday.avalible ? 'Yes' : 'No'}</span></p>
-                    <button onClick={() => handleAddToCart(holiday.name, 1, holiday.arrival, holiday.departure)} style={holiday.avalible > 0 ? {opacity: 1} : {opacity: 0, pointerEvents: 'none'}}>Add to Cart</button>
+                    <h4 className="dropDwn deposit">Deposit Price <br/><span>{holiday.price.formatted_with_symbol}</span></h4>
+                    <p className="dropDwn deposit" style={holiday.quantity > 0 ? {color: 'green'} : {color: 'red'}}>Available <br/><span>{holiday.quantity ? 'Yes' : 'No'}</span></p>
+                    <button onClick={() => handleAddToCart(holiday.name, 1, holiday.arrival, holiday.departure)} style={holiday.quantity > 0 ? {opacity: 1} : {opacity: 0, pointerEvents: 'none'}}>Add to Cart</button>
                 </Card>
     ))}
     </CardContainer>
