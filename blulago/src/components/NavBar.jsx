@@ -3,7 +3,7 @@ import logo from '../assets/blulagoLogo.svg'
 import styled from 'styled-components'
 import Toggle from './Toggle'
 import {Link} from 'react-router-dom'
-import {ShoppingCart} from '@material-ui/icons/';
+import {ShoppingCart, MenuOpen} from '@material-ui/icons/';
 import {IconButton, Badge} from '@material-ui/core'
 
 const NavBar = ({cart}) => {
@@ -56,7 +56,7 @@ const NavBar = ({cart}) => {
                     <ShoppingCart className="cart"/>
                     </IconButton>
                 </StyledUl>
-                
+                <MenuOpen className="mobile-nav"/>
             </StyledNav>
             
         </div>
@@ -69,6 +69,19 @@ const StyledNav =styled.nav`
     height: 10vh;
     display: flex;
     justify-content: space-between;
+    .mobile-nav{
+    display: none;
+    cursor: pointer;
+}
+@media (max-width: 600px){
+    position: relative;
+    .mobile-nav{
+        display: inline;
+        position: absolute;
+        right: 10%;
+        top: 3vh
+    }
+}
     
     `
 const StyledDiv = styled.div`
@@ -89,11 +102,16 @@ justify-content: center;
 align-items: center;
 margin-right: 4rem;
 gap: 1rem;
+
 .cart{
     margin-left: 0rem;
 }
 .pointer{
     cursor: pointer;
+}
+@media (max-width: 600px){
+    display: none;
+   
 }
 `
 

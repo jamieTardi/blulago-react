@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Footer from '../components/Footer'
+import {Link} from 'react-router-dom'
 
 
 const ShopHome = ({cart, handleAddToCart, holidays}) => {
@@ -25,7 +26,7 @@ const ShopHome = ({cart, handleAddToCart, holidays}) => {
             message either via the online contact form or the email in the contact 
             us section. Food packages and bait orders can be taken 6 weeks before 
             arrival up until two weeks before travel, please ensure you contact us 
-            in advance for this.</p>
+            in advance for this. By purchasing a weeks booking you are agreeing to our <Link to="/terms">terms and conditions.</Link></p>
             </BookingBlurb>
         <ShopContainer>
         <CardContainer>

@@ -8,6 +8,7 @@ import Cart from './components/Cart'
 import Gallery from './pages/Gallery'
 import {commerce} from './lib/commerce'
 import Checkout from './components/Checkout/Checkout'
+import Terms from './components/Terms'
 
 
 function App() {
@@ -66,9 +67,11 @@ const refreshCart = async() => {
         <Cart  cart={cart} setCart={setCart} handleEmptyCart={handleEmptyCart}/>
       </Route>
       <Route exact path="/checkout">
-        <Checkout/>
+        <Checkout cart={cart}/>
       </Route>
-    
+    <Route exact path="/terms">
+    <Terms/>
+    </Route>
       </Switch>
       
     </div>

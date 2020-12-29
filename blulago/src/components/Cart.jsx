@@ -19,7 +19,7 @@ const Cart = ({cart, handleEmptyCart}) => {
                 </div>
                 ))}
                 <Button variant="contained" color="secondary" onClick={handleEmptyCart}>Empty Cart</Button>
-            <Button component={Link} to="/checkout" variant="contained" color="primary">Checkout</Button>      
+            <Button component={Link} to="/checkout"  variant="contained" color="primary">Checkout</Button>      
         </CartContainer>
             : 
             <CartContainer>
