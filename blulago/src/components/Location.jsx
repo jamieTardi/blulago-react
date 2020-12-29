@@ -47,7 +47,7 @@ img{
 
 const LocationPic = styled.div`
 border: none;
-width: 25vw;
+width: 35vw;
 height: 29vh;
 margin-top: 1rem;
 display: flex;

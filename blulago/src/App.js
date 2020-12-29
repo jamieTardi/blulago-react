@@ -41,7 +41,7 @@ function App() {
         <Gallery />
       </Route>
       <Route exact path="/cart">
-        <Cart  cart={cart}/>
+        <Cart  cart={cart} setCart={setCart}/>
       </Route>
     
       </Switch>

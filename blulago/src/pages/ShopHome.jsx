@@ -60,7 +60,7 @@ position: relative;
 padding: 0rem 4rem;
 margin-bottom: 2rem;
 .arrivalDepart{
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 `
 
@@ -74,7 +74,7 @@ h2{
     color: #595959
 }
 p{
-    padding: 1rem 2rem
+    padding: 1rem 2rem;
 }
 `
 
@@ -98,6 +98,7 @@ background: #E3DFDB;
 button{
     background: #18DDEB;
     color: white;
+    font-size: 1.1rem;
     &:hover{
         filter: brightness(0.70);
     }
@@ -107,7 +108,7 @@ h4{
     padding-bottom: 0.5rem;
     color: #595959;
     font-family: 'Lobster Two', cursive;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 div{
     display: flex;

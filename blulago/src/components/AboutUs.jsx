@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import Lake from '../assets/lake-pic-hero.jpeg'
 import LakeTwo from '../assets/picture6.JPG'
-import { Link } from 'react-router-dom'
 
 
 
@@ -23,7 +22,7 @@ const AboutUs = () => {
                  assumenda at veritatis vero harum obcaecati numquam quos quia. 
                  Similique adipisci id maxime illum deleniti ipsam distinctio.
                 </p>
-                <Link to=""> <button>Contanct Us</button></Link>
+                <button>Contanct Us</button>
             </AboutUsDiv >
             <div>
             <AboutUsPic>
@@ -59,7 +58,7 @@ padding: 0rem 4rem;
 
 const AboutUsPic = styled.div`
 border: none;
-width: 25vw;
+width: 35vw;
 height: 29vh;
 margin-top: 1rem;
 img{
