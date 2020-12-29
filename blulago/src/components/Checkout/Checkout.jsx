@@ -8,7 +8,7 @@ import { commerce } from '../../lib/commerce'
 
 
 const steps = ['Shipping Address', 'Payment Details']
-const Checkout = ({cart}) => {
+const Checkout = ({cart, order, error, onCaptureCheckout}) => {
     const [activeStep, setActiveStep] = useState(0)
     const [checkoutToken, setCheckoutToken] = useState(null)
     const [shippingData, setShippingData] = useState({})
@@ -21,7 +21,7 @@ const Checkout = ({cart}) => {
         setShippingData(data)
         nextStep()
     }
-    const Form = () => activeStep === 0 ? <AddressForm checkoutToken={checkoutToken} next={next} /> : <PaymentForm/>
+    const Form = () => activeStep === 0 ? <AddressForm checkoutToken={checkoutToken} next={next} /> : <PaymentForm shippingData={shippingData} token={checkoutToken} backStep={backStep} nextStep={nextStep} onCaptureCheckout={onCaptureCheckout}/>
     useEffect(() => {
         const generateToken = async () => {
             try{
