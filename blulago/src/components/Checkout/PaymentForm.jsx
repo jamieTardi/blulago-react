@@ -5,7 +5,7 @@ import { loadStripe } from '@stripe/stripe-js'
 import Review from './Review'
 
 const PaymentForm = ({token, backStep, onCaptureCheckout, nextStep, shippingData}) => {
-console.log(onCaptureCheckout)
+console.log(shippingData)
     const stripePromise = loadStripe('pk_live_51I3ia8CB5J6Ndm3cB97rSo7H1wNqksNAe0U7HY9e0GfP7IkoFY3Ko26Dwak1atqJ0XalrrcfdGKvNHh6CJrj6iH200QTd6TE94')
 
     const handleSubmit = async(event, elements, stripe) =>{
@@ -24,7 +24,7 @@ console.log(onCaptureCheckout)
             const orderData = {
                 line_items: token.live.line_items,
                 customer: {
-                    firstname: shippingData.firstname,
+                    firstname: shippingData.firstName,
                     lastname: shippingData.lastName,
                     email: shippingData.email,
                     address: shippingData.address1,
