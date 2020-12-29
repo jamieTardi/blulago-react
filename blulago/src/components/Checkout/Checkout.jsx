@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import AddressForm from './AddressForm'
 import PaymentForm from './PaymentForm'
-import {Paper, Stepper, Step, StepLabel, Typography, CircularProgress, Divider, Button} from '@material-ui/core'
+import {Paper, Stepper, Step, StepLabel, Typography,} from '@material-ui/core'
 import useStyles from './styles'
 import Confirmation from './Confirmation'
 import { commerce } from '../../lib/commerce'
