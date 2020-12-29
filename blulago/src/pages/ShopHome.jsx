@@ -5,7 +5,7 @@ import Footer from '../components/Footer'
 
 const ShopHome = ({cart, handleAddToCart, holidays}) => {
 
-console.log(holidays)
+
 
 
 
@@ -38,7 +38,7 @@ console.log(holidays)
                     </div>
                     <h4 className="dropDwn deposit">Deposit Price <br/><span>{holiday.price.formatted_with_symbol}</span></h4>
                     <p className="dropDwn deposit" style={holiday.quantity > 0 ? {color: 'green'} : {color: 'red'}}>Available <br/><span>{holiday.quantity ? 'Yes' : 'No'}</span></p>
-                    <button onClick={() => handleAddToCart(holiday.name, 1)} style={holiday.quantity > 0 ? {opacity: 1} : {opacity: 0, pointerEvents: 'none'}}>Add to Cart</button>
+                    <button onClick={() => handleAddToCart(holiday.id, 1)} style={holiday.quantity > 0 ? {opacity: 1} : {opacity: 0, pointerEvents: 'none'}}>Add to Cart</button>
                 </Card>
     ))}
     </CardContainer>

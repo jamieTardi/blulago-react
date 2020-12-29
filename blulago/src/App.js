@@ -9,7 +9,7 @@ import Gallery from './pages/Gallery'
 import {commerce} from './lib/commerce'
 
 function App() {
-  const [cart, setCart] = useState([])
+  const [cart, setCart] = useState({})
   const [holidays, setHolidays] = useState([])
   const location = useLocation();
 
@@ -20,12 +20,26 @@ function App() {
         setHolidays(data)
 }
 
+const fetchCart = async() => {
+  setCart(await commerce.cart.retrieve())
+}
 
-  const handleAddToCart = (productId, quantity) => {
-    setCart([...cart, {name: productId, quantity}])
+
+  const handleAddToCart = async (productId, quantity) => {
+    const { cart } = await commerce
+            .cart
+            .add(productId, quantity)
+        setCart(cart)
   }
 
-  useEffect(() => {fetchHolidays()},[])
+  const handleEmptyCart = async() => {
+    const { cart } = await commerce.cart.empty();
+
+    setCart(cart)
+}
+
+  useEffect(() => {fetchHolidays()
+                    fetchCart()},[])
   return (
     <div className="App">
       <GlobalStyles/>
@@ -41,7 +55,7 @@ function App() {
         <Gallery />
       </Route>
       <Route exact path="/cart">
-        <Cart  cart={cart} setCart={setCart}/>
+        <Cart  cart={cart} setCart={setCart} handleEmptyCart={handleEmptyCart}/>
       </Route>
     
       </Switch>

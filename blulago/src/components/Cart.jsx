@@ -6,28 +6,21 @@ import EmptyCart from '../assets/empty-cart.svg'
 import {Link} from 'react-router-dom'
 
 
-const Cart = ({cart, setCart}) => {
+const Cart = ({cart, handleEmptyCart}) => {
     console.log(cart)
-    const handleEmptyCart = () => {
-        setCart([])
-    }
     return (
         <>
-        {cart.length !== 0 ?
+        {cart.line_items.length !== 0 ?
         <CartContainer>
             <h2>Your Cart</h2>
-            
-            {cart.map((holiday) => (
+            {cart.line_items.map((holiday) => (
                 <div key={uuidv4()}>
-                
+                    <h4>This Booking is for:</h4>
                 <p>{holiday.name}</p>
                 </div>
-                
                 ))}
                 <Button variant="contained" color="secondary" onClick={handleEmptyCart}>Empty Cart</Button>
-            <Button variant="contained" color="primary">Checkout</Button>
-            
-                
+            <Button variant="contained" color="primary">Checkout</Button>      
         </CartContainer>
             : 
             <CartContainer>
