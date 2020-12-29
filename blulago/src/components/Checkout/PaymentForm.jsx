@@ -5,7 +5,7 @@ import { loadStripe } from '@stripe/stripe-js'
 import Review from './Review'
 
 const PaymentForm = ({token, backStep, onCaptureCheckout, nextStep, shippingData}) => {
-console.log(shippingData)
+console.log(onCaptureCheckout)
     const stripePromise = loadStripe('pk_live_51I3ia8CB5J6Ndm3cB97rSo7H1wNqksNAe0U7HY9e0GfP7IkoFY3Ko26Dwak1atqJ0XalrrcfdGKvNHh6CJrj6iH200QTd6TE94')
 
     const handleSubmit = async(event, elements, stripe) =>{
@@ -31,9 +31,6 @@ console.log(shippingData)
                     town: shippingData.city,
                     phone: shippingData.phone,
                     postcode: shippingData.zip,
-                },
-                fulfillment: {
-                    shipping_method: shippingData.email
                 },
                 payment: {
                     gateway: 'stripe',

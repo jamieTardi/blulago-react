@@ -15,7 +15,7 @@ function App() {
   const [cart, setCart] = useState({})
   const [holidays, setHolidays] = useState([])
   const [order, setOrder] = useState({})
-  const [errorMessage, setErrorMessage] = ('')
+  const [errorMessage, setErrorMessage] = useState('')
   const location = useLocation();
 
   const fetchHolidays = async() => {
