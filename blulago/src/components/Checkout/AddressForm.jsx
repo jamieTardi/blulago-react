@@ -20,7 +20,7 @@ const AddressForm = ({next, checkoutToken}) => {
           <FormInput name="address1" label='Address'/>
           <FormInput name="city" label='City/Town'/>
           <FormInput name="zip" label='Postcode'/>
-          <FormInput name="phone" label='Phone Number'/>
+         
 
 
         </Grid>

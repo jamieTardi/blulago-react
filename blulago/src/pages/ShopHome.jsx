@@ -31,14 +31,14 @@ const ShopHome = ({cart, handleAddToCart, holidays}) => {
         <ShopContainer>
         <CardContainer>
             {holidays.map((holiday) => (
-                <Card key={holiday.id}>
+                <Card key={holiday.id} style={holiday.quantity > 0 ? {opacity: 1} : {opacity: 0.6, pointerEvents: 'none'}}>
                     <h4>Lake exclusive booking for 2022</h4>
                     <img src={holiday.media.source} alt="fishing pic"/>
                     <div>
-                    <p className="dropDwn arrivalDepart">Dates <br/><span>{holiday.name}</span></p>
+                    <p className="dropDwn arrivalDepart">Dates <br/><DatesStyled>{holiday.name}</DatesStyled></p>
                     </div>
                     <h4 className="dropDwn deposit">Deposit Price <br/><span>{holiday.price.formatted_with_symbol}</span></h4>
-                    <p className="dropDwn deposit" style={holiday.quantity > 0 ? {color: 'green'} : {color: 'red'}}>Available <br/><span>{holiday.quantity ? 'Yes' : 'No'}</span></p>
+                    <p className="dropDwn deposit" style={holiday.quantity > 0 ? {color: 'green'} : {color: 'red'}}><span>{holiday.quantity ? 'Spaces Available ' : 'Sold out'}</span></p>
                     <button onClick={() => handleAddToCart(holiday.id, 1)} style={holiday.quantity > 0 ? {opacity: 1} : {opacity: 0, pointerEvents: 'none'}}>Add to Cart</button>
                 </Card>
     ))}
@@ -63,6 +63,9 @@ margin-bottom: 2rem;
 .arrivalDepart{
     font-size: 1rem;
 }
+`
+const DatesStyled = styled.span`
+font-size: 0.9rem;
 `
 
 const BookingBlurb = styled.div`
