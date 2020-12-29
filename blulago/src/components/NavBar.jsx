@@ -7,7 +7,7 @@ import {ShoppingCart} from '@material-ui/icons/';
 import {IconButton, Badge} from '@material-ui/core'
 
 const NavBar = ({cart}) => {
-    const numberItems = cart.length
+    const numberItems = cart.line_items ? cart.line_items.length : 0
     return (
         <div>
             <StyledNav>

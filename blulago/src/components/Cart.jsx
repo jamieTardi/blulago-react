@@ -7,7 +7,6 @@ import {Link} from 'react-router-dom'
 
 
 const Cart = ({cart, handleEmptyCart}) => {
-    console.log(cart)
     return (
         <>
         {cart.line_items.length !== 0 ?
@@ -20,14 +19,14 @@ const Cart = ({cart, handleEmptyCart}) => {
                 </div>
                 ))}
                 <Button variant="contained" color="secondary" onClick={handleEmptyCart}>Empty Cart</Button>
-            <Button variant="contained" color="primary">Checkout</Button>      
+            <Button component={Link} to="/checkout" variant="contained" color="primary">Checkout</Button>      
         </CartContainer>
             : 
             <CartContainer>
                 <EmptyCartContainer>
                 <h2>Your Cart</h2>
                 <EmptyCartP>Your Cart is empty!</EmptyCartP>
-                <Button component={Link} to="shopHome" variant="contained" color="primary">Back to Shop</Button>
+                <Button component={Link} to="shopHome" variant="contained" color="primary">Back to Online Booking</Button>
                 </EmptyCartContainer>
                 <EmptyCartImg src={EmptyCart} alt="Cart is empty"/>
             </CartContainer>

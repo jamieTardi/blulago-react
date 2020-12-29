@@ -7,6 +7,8 @@ import ShopHome from './pages/ShopHome'
 import Cart from './components/Cart'
 import Gallery from './pages/Gallery'
 import {commerce} from './lib/commerce'
+import Checkout from './components/Checkout/Checkout'
+
 
 function App() {
   const [cart, setCart] = useState({})
@@ -37,6 +39,12 @@ const fetchCart = async() => {
 
     setCart(cart)
 }
+const refreshCart = async() => {
+  const newCart = await commerce.cart.refresh()
+
+  setCart(newCart)
+}
+
 
   useEffect(() => {fetchHolidays()
                     fetchCart()},[])
@@ -57,8 +65,12 @@ const fetchCart = async() => {
       <Route exact path="/cart">
         <Cart  cart={cart} setCart={setCart} handleEmptyCart={handleEmptyCart}/>
       </Route>
+      <Route exact path="/checkout">
+        <Checkout/>
+      </Route>
     
       </Switch>
+      
     </div>
   );
 }
