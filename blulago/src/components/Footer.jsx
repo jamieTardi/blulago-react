@@ -8,7 +8,7 @@ const Footer = () => {
     return (
         <NavContainer>
             <CopyrightContainer>
-            <h6>Webpage created by Tardi Digital Media </h6>
+            <h6>Webpage created<br/> by Tardi Digital Media </h6>
             <h6><a href="https://www.jamietardi.co.uk/" rel="noreferrer" target="_blank">www.jamietardi.co.uk</a></h6>
             </CopyrightContainer>
             <AddressContainer>
@@ -30,13 +30,15 @@ const Footer = () => {
 const Social = styled.div`
 display: flex;
 gap: 1rem;
-
 img{
     cursor: pointer;
     background:none;
     &:hover{
         opacity: 0.7
     }
+}
+@media (max-width: 600px){
+    gap: 0.3rem;
 }
 `
 const AddressContainer = styled.div`
@@ -58,6 +60,9 @@ background-color: #e3dfdb;
 display: flex;
 justify-content: space-around;
 align-items: center;
+@media (max-width: 600px){
+    font-size: 0.7rem;
+}
 `
 
 

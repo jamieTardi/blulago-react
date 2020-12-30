@@ -63,6 +63,9 @@ margin-bottom: 2rem;
 .arrivalDepart{
     font-size: 1rem;
 }
+@media (max-width: 600px){
+    padding: 1rem
+}
 `
 const DatesStyled = styled.span`
 font-size: 0.9rem;
@@ -80,6 +83,13 @@ h2{
 p{
     padding: 1rem 2rem;
 }
+@media (max-width: 600px){
+    margin: 1rem 1rem;
+    text-align: start;
+    h2{
+        text-align: center
+    }
+}
 `
 
 const ShopContainer = styled.div`
@@ -89,7 +99,7 @@ padding: 2rem 0rem
 `
 
 const Card = styled.div`
-width: 25vw;
+max-width: 28vw;
 height: 55vh;
 flex: 1 0 30%;
 border: none;
@@ -130,9 +140,11 @@ div{
 }
 @media(max-width: 800px){
     flex: 1 2 50%;
+    min-width: 76vw
 };
 @media(max-width: 600px){
     flex: 1 2 50%;
+    min-width: 90vw;
 };
 @media(min-width: 1600px){
     flex: 1 4 20%;
