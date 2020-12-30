@@ -61,8 +61,8 @@ const Checkout = ({cart, order, error, onCaptureCheckout}) => {
 }
 
 const StyledCheckout = styled.div`
-    height: 80vh;
-    width: 100vw
+    min-height: 80vh;
+    width: 100vw;
 
 `
 

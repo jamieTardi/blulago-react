@@ -14,9 +14,9 @@ const Cart = ({cart, handleEmptyCart}) => {
         <CartContainer>
             <h2>Your Cart</h2>
             <img src={cartPic} alt="cart pic"/>
+            <h4>This Booking is for:</h4>
             {cart.line_items.map((holiday) => (
                 <MapContainer key={uuidv4()}>
-                    <h4>This Booking is for:</h4>
                 <p>{holiday.name}</p>
                 <p>Deposit Price: {holiday.price.formatted_with_symbol}</p>
                 </MapContainer>
@@ -77,6 +77,9 @@ const MapContainer = styled.div`
 display: flex;
 flex-direction: column;
 margin-bottom: 1rem;
+p{
+    margin-bottom: 0.4rem
+}
 @media (max-width: 900px){
     margin: 0rem 1rem;
     margin-bottom: 1rem;

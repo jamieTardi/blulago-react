@@ -12,7 +12,16 @@ import Terms from './components/Terms'
 import Confirmation from './components/Checkout/Confirmation'
 import Footer from './components/Footer'
 import styled from 'styled-components'
+import Drawer from './components/Drawer'
+import {makeStyles} from '@material-ui/core/styles'
 
+
+const useStyles = makeStyles({
+  container: {
+    display: 'flex',
+  }
+
+})
 
 function App() {
   const [cart, setCart] = useState({})
@@ -20,6 +29,8 @@ function App() {
   const [order, setOrder] = useState({})
   const [errorMessage, setErrorMessage] = useState('')
   const location = useLocation();
+
+  const classes = useStyles()
 
   const fetchHolidays = async() => {
     const {data} = await commerce
@@ -69,6 +80,7 @@ catch(error){
     <StyledApp className="App">
       <GlobalStyles/>
       <NavBar cart={cart}/>
+      <Drawer className={classes.container}/>
       <Switch location={location} key={location.pathname}>
       <Route path="/" exact>
       <Home/>
@@ -100,4 +112,6 @@ catch(error){
 const StyledApp = styled.div`
 min-height: 100vh
 `
+
+
 export default App;
