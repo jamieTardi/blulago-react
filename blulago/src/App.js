@@ -9,7 +9,9 @@ import Gallery from './pages/Gallery'
 import {commerce} from './lib/commerce'
 import Checkout from './components/Checkout/Checkout'
 import Terms from './components/Terms'
-import Review from './components/Checkout/Review'
+import Confirmation from './components/Checkout/Confirmation'
+import Footer from './components/Footer'
+import styled from 'styled-components'
 
 
 function App() {
@@ -64,7 +66,7 @@ catch(error){
   useEffect(() => {fetchHolidays()
                     fetchCart()},[])
   return (
-    <div className="App">
+    <StyledApp className="App">
       <GlobalStyles/>
       <NavBar cart={cart}/>
       <Switch location={location} key={location.pathname}>
@@ -86,13 +88,16 @@ catch(error){
     <Route exact path="/terms">
     <Terms/>
     </Route>
-    <Route exact path="/review">
-      <Review />
+    <Route exact path="/confirmation">
+      <Confirmation />
     </Route>
       </Switch>
-      
-    </div>
+      <Footer/>
+    </StyledApp>
   );
 }
 
+const StyledApp = styled.div`
+min-height: 100vh
+`
 export default App;

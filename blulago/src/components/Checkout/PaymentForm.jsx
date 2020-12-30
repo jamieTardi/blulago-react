@@ -4,7 +4,7 @@ import { Elements, CardElement, ElementsConsumer} from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
 import Review from './Review'
 
-const PaymentForm = ({token, backStep, onCaptureCheckout, nextStep, shippingData}) => {
+const PaymentForm = ({token, backStep, onCaptureCheckout, nextStep, shippingData, cart}) => {
 
     const stripePromise = loadStripe('pk_live_51I3ia8CB5J6Ndm3cB97rSo7H1wNqksNAe0U7HY9e0GfP7IkoFY3Ko26Dwak1atqJ0XalrrcfdGKvNHh6CJrj6iH200QTd6TE94')
 
@@ -46,7 +46,7 @@ const PaymentForm = ({token, backStep, onCaptureCheckout, nextStep, shippingData
     
     return (
         <>
-             <Review token={token}/>
+             <Review cart={cart}/>
         <Divider />
         <Typography variant="h6" gutterBottom style={{ margin: '20px 0'}}>Payment Method</Typography>
         <Elements stripe={stripePromise}>
