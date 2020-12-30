@@ -9,6 +9,7 @@ import Gallery from './pages/Gallery'
 import {commerce} from './lib/commerce'
 import Checkout from './components/Checkout/Checkout'
 import Terms from './components/Terms'
+import Review from './components/Checkout/Review'
 
 
 function App() {
@@ -84,6 +85,9 @@ catch(error){
       </Route>
     <Route exact path="/terms">
     <Terms/>
+    </Route>
+    <Route exact path="/review">
+      <Review />
     </Route>
       </Switch>
       
