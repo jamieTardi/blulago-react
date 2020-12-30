@@ -43,9 +43,9 @@ const ShopHome = ({cart, handleAddToCart, holidays}) => {
                 </Card>
     ))}
     </CardContainer>
-    <Footer/>
+    
         </ShopContainer>
-        
+        <Footer/>
         </>
         
     )
@@ -63,7 +63,10 @@ margin-bottom: 2rem;
 .arrivalDepart{
     font-size: 1rem;
 }
-@media (max-width: 600px){
+@media (max-width: 900px){
+    flex: 1 0 60%;
+}
+@media (max-width: 670px){
     padding: 1rem
 }
 `
@@ -83,7 +86,11 @@ h2{
 p{
     padding: 1rem 2rem;
 }
-@media (max-width: 600px){
+
+@media (max-width: 900px){
+    margin: 1rem 1rem
+}
+@media (max-width: 670px){
     margin: 1rem 1rem;
     text-align: start;
     h2{
@@ -94,7 +101,7 @@ p{
 
 const ShopContainer = styled.div`
 width: 100vw;
-height: 100vh;
+height: auto;
 padding: 2rem 0rem
 `
 
@@ -138,11 +145,16 @@ div{
     font-size: 1rem;
     font-family: 'Roboto', sans-serif;
 }
+@media(max-width: 900px){
+    flex: 1 0 21%;
+    min-width: 39vw;
+    height: fit-content;
+};
 @media(max-width: 800px){
     flex: 1 2 50%;
-    min-width: 76vw
+    min-width: 37vw;
 };
-@media(max-width: 600px){
+@media(max-width: 670px){
     flex: 1 2 50%;
     min-width: 90vw;
 };

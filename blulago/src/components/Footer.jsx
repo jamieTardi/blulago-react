@@ -63,6 +63,9 @@ align-items: center;
 @media (max-width: 600px){
     font-size: 0.7rem;
 }
+@media (max-width: 850px){
+    height: 18vh
+}
 `
 
 
