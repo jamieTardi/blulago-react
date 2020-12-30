@@ -6,7 +6,7 @@ import { Home, CropOriginal, Loyalty, Bathtub, Gavel, ContactSupport} from '@mat
 
 const useStyles = makeStyles({
   drawer: {
-    width: '160px',
+    width: '200px',
   }
 
 })
