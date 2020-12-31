@@ -54,6 +54,11 @@ const fetchCart = async() => {
             .cart
             .add(productId, quantity)
         setCart(cart)
+        addToCartAlert()
+  }
+
+  const addToCartAlert = () => {
+    alert('added to cart')
   }
 
   const handleEmptyCart = async() => {

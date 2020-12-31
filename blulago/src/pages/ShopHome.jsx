@@ -65,7 +65,7 @@ margin-bottom: 2rem;
     flex: 1 0 60%;
 }
 @media (max-width: 670px){
-    padding: 1rem
+    padding: 1rem;
 }
 `
 const DatesStyled = styled.span`
@@ -155,6 +155,7 @@ div{
 @media(max-width: 670px){
     flex: 1 2 50%;
     min-width: 90vw;
+    margin-bottom: 1.5rem;
 };
 @media(min-width: 1600px){
     flex: 1 4 20%;
