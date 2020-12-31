@@ -105,7 +105,7 @@ padding: 2rem 0rem
 
 const Card = styled.div`
 max-width: 28vw;
-height: 55vh;
+max-height: 60vh;
 flex: 1 0 30%;
 border: none;
 display: flex;
@@ -114,6 +114,7 @@ justify-content: center;
 align-items: center; 
 box-shadow: 5px 5px 15px 5px grey;
 background: #E3DFDB;
+
 button{
     background: #18DDEB;
     color: white;
@@ -143,9 +144,10 @@ div{
     font-size: 1rem;
     font-family: 'Roboto', sans-serif;
 }
-@media(max-width: 900px){
+@media(max-width: 1000px){
     flex: 1 0 21%;
     min-width: 39vw;
+    min-height: 600px;
     height: fit-content;
 };
 @media(max-width: 800px){
@@ -155,7 +157,9 @@ div{
 @media(max-width: 670px){
     flex: 1 2 50%;
     min-width: 90vw;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
+    min-height: 500px;
+   
 };
 @media(min-width: 1600px){
     flex: 1 4 20%;

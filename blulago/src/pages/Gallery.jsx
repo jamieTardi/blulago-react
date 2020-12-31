@@ -44,7 +44,10 @@ width: fit-content;
 height: fit-content;
 margin: 1rem 2rem;
 button{
-    background: transparent
+    background: transparent;
+    &:hover{
+        background: transparent;
+    }
 }
 `
 

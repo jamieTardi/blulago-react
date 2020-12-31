@@ -30,19 +30,41 @@ function App() {
   const [errorMessage, setErrorMessage] = useState('')
   const [sidebar, setSidebar] = useState(false)
   const location = useLocation();
-  console.log(holidays)
   const classes = useStyles()
+
+
 
   const showSidebar = () => {
     setSidebar(prev => !prev)
 }
 
-  const fetchHolidays = async() => {
-    const {data} = await commerce
-        .products
-        .list()
-        setHolidays(data)
+  const fetchHolidays = () => {
+        const url = new URL(
+          "https://api.chec.io/v1/products"
+      );
+      
+      let params = {
+        "limit": "35",
+      };
+      
+      Object.keys(params)
+          .forEach(key => url.searchParams.append(key, params[key]));
+      
+          let headers = {
+            "X-Authorization": "pk_21211e072b344232b56afb459aa3d9984ce4c91dabee7",
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+        };
+        
+        fetch(url, {
+            method: "GET",
+            headers: headers,
+        })
+            .then(response => response.json())
+            .then(json => setHolidays(json.data));
 }
+
+
 
 const fetchCart = async() => {
   setCart(await commerce.cart.retrieve())
@@ -85,7 +107,8 @@ catch(error){
 
 
   useEffect(() => {fetchHolidays()
-                    fetchCart()},[])
+                    fetchCart()
+                    },[])
   return (
     <StyledApp className="App">
       <GlobalStyles/>
