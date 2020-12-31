@@ -30,7 +30,7 @@ function App() {
   const [errorMessage, setErrorMessage] = useState('')
   const [sidebar, setSidebar] = useState(false)
   const location = useLocation();
-
+  console.log(holidays)
   const classes = useStyles()
 
   const showSidebar = () => {
