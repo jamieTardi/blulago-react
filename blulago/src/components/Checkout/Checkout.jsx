@@ -5,6 +5,7 @@ import {Paper, Stepper, Step, StepLabel, Typography,} from '@material-ui/core'
 import useStyles from './styles'
 import Confirmation from './Confirmation'
 import { commerce } from '../../lib/commerce'
+import styled from 'styled-components'
 
 
 const steps = ['Shipping Address', 'Payment Details']
@@ -21,7 +22,7 @@ const Checkout = ({cart, order, error, onCaptureCheckout}) => {
         setShippingData(data)
         nextStep()
     }
-    const Form = () => activeStep === 0 ? <AddressForm checkoutToken={checkoutToken} next={next} /> : <PaymentForm shippingData={shippingData} token={checkoutToken} backStep={backStep} nextStep={nextStep} onCaptureCheckout={onCaptureCheckout}/>
+    const Form = () => activeStep === 0 ? <AddressForm checkoutToken={checkoutToken} next={next} /> : <PaymentForm cart={cart} shippingData={shippingData} token={checkoutToken} backStep={backStep} nextStep={nextStep} onCaptureCheckout={onCaptureCheckout}/>
     useEffect(() => {
         const generateToken = async () => {
             try{
@@ -39,7 +40,7 @@ const Checkout = ({cart, order, error, onCaptureCheckout}) => {
         generateToken()
     }, [cart])
     return (
-        <>
+        <StyledCheckout>
         <div className={classes.toolbar}/>
         <main className={classes.layout}>
             <Paper className={classes.paper}>
@@ -55,8 +56,14 @@ const Checkout = ({cart, order, error, onCaptureCheckout}) => {
                 </Paper>
         </main>
             
-        </>
+        </StyledCheckout>
     )
 }
+
+const StyledCheckout = styled.div`
+    min-height: 80vh;
+    width: 100vw;
+
+`
 
 export default Checkout

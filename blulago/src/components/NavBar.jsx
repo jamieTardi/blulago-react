@@ -57,6 +57,7 @@ const NavBar = ({cart}) => {
                     </IconButton>
                 </StyledUl>
                 <MenuOpen className="mobile-nav"/>
+               
             </StyledNav>
             
         </div>
@@ -72,6 +73,7 @@ const StyledNav =styled.nav`
     .mobile-nav{
     display: none;
     cursor: pointer;
+    position: relative
 }
 @media (max-width: 600px){
     position: relative;
@@ -82,8 +84,10 @@ const StyledNav =styled.nav`
         top: 3vh
     }
 }
-    
-    `
+`
+
+
+      
 const StyledDiv = styled.div`
 display: flex;
 width: 20vw

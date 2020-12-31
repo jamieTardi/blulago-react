@@ -56,6 +56,7 @@ a{
 const NavContainer = styled.div`
 height: 10vh;
 width: 100vw;
+
 background-color: #e3dfdb;
 display: flex;
 justify-content: space-around;

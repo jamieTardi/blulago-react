@@ -9,8 +9,19 @@ import Gallery from './pages/Gallery'
 import {commerce} from './lib/commerce'
 import Checkout from './components/Checkout/Checkout'
 import Terms from './components/Terms'
-import Review from './components/Checkout/Review'
+import Confirmation from './components/Checkout/Confirmation'
+import Footer from './components/Footer'
+import styled from 'styled-components'
+import Drawer from './components/Drawer'
+import {makeStyles} from '@material-ui/core/styles'
 
+
+const useStyles = makeStyles({
+  container: {
+    display: 'flex',
+  }
+
+})
 
 function App() {
   const [cart, setCart] = useState({})
@@ -18,6 +29,8 @@ function App() {
   const [order, setOrder] = useState({})
   const [errorMessage, setErrorMessage] = useState('')
   const location = useLocation();
+
+  const classes = useStyles()
 
   const fetchHolidays = async() => {
     const {data} = await commerce
@@ -64,9 +77,10 @@ catch(error){
   useEffect(() => {fetchHolidays()
                     fetchCart()},[])
   return (
-    <div className="App">
+    <StyledApp className="App">
       <GlobalStyles/>
       <NavBar cart={cart}/>
+      <Drawer className={classes.container}/>
       <Switch location={location} key={location.pathname}>
       <Route path="/" exact>
       <Home/>
@@ -86,13 +100,18 @@ catch(error){
     <Route exact path="/terms">
     <Terms/>
     </Route>
-    <Route exact path="/review">
-      <Review />
+    <Route exact path="/confirmation">
+      <Confirmation />
     </Route>
       </Switch>
-      
-    </div>
+      <Footer/>
+    </StyledApp>
   );
 }
+
+const StyledApp = styled.div`
+min-height: 100vh
+`
+
 
 export default App;

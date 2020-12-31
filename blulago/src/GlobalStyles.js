@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
       background: #eeeeee;
       width: 100vw;
       overflow-x: hidden;
+      min-height: 100vh;
   }
 
   p, li {
