@@ -1,5 +1,5 @@
 import React from 'react'
-import { Home, CropOriginal, Loyalty, Bathtub, Gavel, ContactSupport} from '@material-ui/icons';
+import { Home, CropOriginal, Loyalty, Bathtub, Gavel, ShoppingCart, ContactSupport} from '@material-ui/icons';
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
 
@@ -10,6 +10,7 @@ const Drawer = ({showSidebar, sidebar, setSidebar}) => {
     
     const navList = [
         {text: "Home", icon: <Home/>, path:"/"},
+        {text: 'Your Cart', icon: <ShoppingCart/>, path: "/cart"},
         {text: "Gallery", icon: <CropOriginal/>, path:"/gallery"}, 
         {text: "Online Booking", icon: <Loyalty/>, path:"/shopHome"}, 
         {text: "Facilities", icon: <Bathtub/>, path:"/facilities"}, 

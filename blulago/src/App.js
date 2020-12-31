@@ -28,7 +28,7 @@ function App() {
   const [holidays, setHolidays] = useState([])
   const [order, setOrder] = useState({})
   const [errorMessage, setErrorMessage] = useState('')
-  const [sidebar, setSidebar] = useState(true)
+  const [sidebar, setSidebar] = useState(false)
   const location = useLocation();
 
   const classes = useStyles()

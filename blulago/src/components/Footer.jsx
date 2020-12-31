@@ -38,7 +38,9 @@ img{
     }
 }
 @media (max-width: 600px){
-    gap: 0.3rem;
+    a{
+    margin: 0.3rem;
+    }
 }
 `
 const AddressContainer = styled.div`

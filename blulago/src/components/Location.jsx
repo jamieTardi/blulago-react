@@ -12,7 +12,7 @@ const Location = () => {
             <LocationPic>
                 <h4>Getting Here</h4>
                 <p>The Best way to get to the lake is to drive from Calais (ferry or eurotunnel). Once you get off the ferry head to A26, when you get on the A26 continue all the way to Reims, this is a good 2 hours 30 min and the bulk of the drive. When you get to reims you will see signs for the A4 signposted Troyes. Take exit 21 for Vallée de l'Aube, then follow the D441 until the D75 then the D180. This will eventually lead you to Rue des Carriéres. 
-Total Drive time from Calais is about 3 hours 30 mins at a leisurely pace in a van</p>
+Total Drive time from Calais is about 4 hours 30 mins at a leisurely pace in a van.</p>
             </LocationPic>
             <LocationPic>
             <img src={Driving} alt="Driving pic" />
@@ -28,7 +28,10 @@ Total Drive time from Calais is about 3 hours 30 mins at a leisurely pace in a v
 }
 
 const FlexContainer = styled.div`
-display: flex
+display: flex;
+@media (max-width: 900px){
+flex-direction: column;
+}
 
 `
 
@@ -42,6 +45,10 @@ img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+@media (max-width: 600px){
+    width: 89vw;
+    margin: 0rem 1rem 1rem 1rem
 }
 `
 
@@ -69,6 +76,14 @@ img{
     height: 100%;
     object-fit: cover;
 
+}
+@media (max-width: 900px){
+ width: 93vw;
+}
+@media (max-width: 600px){
+    height: fit-content;
+    margin: 1rem 0rem;
+    width: 89vw;
 }
 
 
