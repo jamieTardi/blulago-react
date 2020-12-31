@@ -6,10 +6,10 @@ import Location from '../components/Location'
 
 
 
-const Home = () => {
+const Home = ({sidebar}) => {
     return (
         <div>
-            <MainPic/>
+            <MainPic sidebar={sidebar} />
             <AboutUs />
             <Location />
             

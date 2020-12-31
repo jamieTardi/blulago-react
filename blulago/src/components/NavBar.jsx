@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 import {ShoppingCart, MenuOpen} from '@material-ui/icons/';
 import {IconButton, Badge} from '@material-ui/core'
 
-const NavBar = ({cart}) => {
+const NavBar = ({cart, showSidebar}) => {
     const numberItems = cart.line_items ? cart.line_items.length : 0
     return (
         <div>
@@ -56,7 +56,7 @@ const NavBar = ({cart}) => {
                     <ShoppingCart className="cart"/>
                     </IconButton>
                 </StyledUl>
-                <MenuOpen className="mobile-nav"/>
+                <MenuOpen className="mobile-nav" onClick={showSidebar}/>
                
             </StyledNav>
             

@@ -28,9 +28,14 @@ function App() {
   const [holidays, setHolidays] = useState([])
   const [order, setOrder] = useState({})
   const [errorMessage, setErrorMessage] = useState('')
+  const [sidebar, setSidebar] = useState(true)
   const location = useLocation();
 
   const classes = useStyles()
+
+  const showSidebar = () => {
+    setSidebar(prev => !prev)
+}
 
   const fetchHolidays = async() => {
     const {data} = await commerce
@@ -79,11 +84,13 @@ catch(error){
   return (
     <StyledApp className="App">
       <GlobalStyles/>
-      <NavBar cart={cart}/>
-      <Drawer className={classes.container}/>
+      <Drawer className={classes.container} showSidebar={showSidebar} sidebar={sidebar} setSidebar={setSidebar}/>
+
+      <NavBar cart={cart} showSidebar={showSidebar} sidebar={sidebar}/>
+      
       <Switch location={location} key={location.pathname}>
       <Route path="/" exact>
-      <Home/>
+      <Home sidebar={sidebar}/>
       </Route>
       <Route exact path="/shopHome">
         <ShopHome cart={cart} handleAddToCart={handleAddToCart} holidays={holidays}/>

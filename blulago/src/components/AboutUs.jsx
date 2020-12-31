@@ -53,6 +53,13 @@ justify-content: space-around;
 align-items: center;
 text-align: center;
 padding: 0rem 4rem;
+@media (max-width: 900px){
+    min-width: 100vw;
+    height: fit-content;
+    text-align: normal;
+    padding: 0rem;
+    margin: 1rem 0rem;
+}
 
 `
 
@@ -66,10 +73,17 @@ img{
     height: 100%;
     object-fit: cover;
 }
+@media (max-width: 900px){
+    width: 100vw
+}
 `
 
 const FlexContainer = styled.div`
 display: flex;
+z-index: 0;
+@media (max-width: 900px){
+    flex-direction: column;
+}
 `
 
 export default AboutUs
