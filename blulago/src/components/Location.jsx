@@ -1,11 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import locationPic from '../assets/location.png'
 import Driving from '../assets/driving.jpg'
+import Map from './Maps'
+
 
 
 
 const Location = () => {
+console.log(process.env)
     return (
         <FlexContainer>
             <FlexPic>
@@ -19,8 +21,7 @@ Total Drive time from Calais is about 4 hours 30 mins at a leisurely pace in a v
             </LocationPic>
             </FlexPic>
             <LocationContainer>
-            <img src={locationPic} alt="Map"/>
-
+           <Map/>
             </LocationContainer>
             
         </FlexContainer>
@@ -41,15 +42,18 @@ background-color: #e3dfdb;
 width: 70vw;
 height: 60vh;
 margin: 1rem 1rem;
+margin-right: 2rem;
 img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-@media (max-width: 600px){
+    @media (max-width: 600px){
     width: 89vw;
-    margin: 0rem 1rem 1rem 1rem
 }
+
+    
+}
+
 `
 
 const LocationPic = styled.div`
@@ -64,7 +68,7 @@ flex-direction: column;
 text-align: center;
 p{
     font-size: 0.8rem;
-    
+    padding-bottom: 0.5rem;
 }
 h4{
     color: #595959;
@@ -75,10 +79,16 @@ img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    @media (max-width: 768px){
+        min-height: 30vh;
+        min-width: 100%;
+    }
 
 }
 @media (max-width: 900px){
  width: 93vw;
+ height: fit-content;
+
 }
 @media (max-width: 600px){
     height: fit-content;
