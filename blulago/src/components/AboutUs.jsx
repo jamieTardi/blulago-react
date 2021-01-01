@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Lake from '../assets/lake-pic-hero.jpeg'
 import LakeTwo from '../assets/picture6.JPG'
+import Weather from './Weather'
 
 
 
@@ -32,7 +33,7 @@ const AboutUs = () => {
                 <img src={Lake} alt="Lake pic"/>
             </AboutUsPic>
             <AboutUsPic>
-                <img src={LakeTwo} alt="second pic"/>
+                <Weather/>
             </AboutUsPic>
             </div>
         </FlexContainer>

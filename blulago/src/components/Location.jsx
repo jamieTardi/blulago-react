@@ -21,7 +21,7 @@ Total Drive time from Calais is about 4 hours 30 mins at a leisurely pace in a v
             </LocationPic>
             </FlexPic>
             <LocationContainer>
-            <iframe width="100%" height="100%" frameborder="0" title="map" style={{border:0}} src="https://www.google.com/maps/embed/v1/place?q=48.447111%2C%204.513381&key=AIzaSyBm5eKhjz86YHo0v5br56_MFjU9VlnLOnc" allowfullscreen></iframe> 
+            <iframe width="100%" height="100%" frameBorder="0" title="map" style={{border:0}} src="https://www.google.com/maps/embed/v1/place?q=48.447111%2C%204.513381&key=AIzaSyBm5eKhjz86YHo0v5br56_MFjU9VlnLOnc" allowFullScreen></iframe> 
             </LocationContainer>
             
         </FlexContainer>
