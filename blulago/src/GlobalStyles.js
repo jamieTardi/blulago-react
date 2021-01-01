@@ -16,6 +16,8 @@ const GlobalStyle = createGlobalStyle`
       min-height: 100vh;
   }
 
+
+
   p, li {
       color: #595959
   }

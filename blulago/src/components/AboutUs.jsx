@@ -65,7 +65,7 @@ padding: 0rem 4rem;
 }
 @media (max-width: 600px){
     min-width: 89vw;
-    height: 90vh;
+    min-height: 650px;
     margin-right: 3rem;
     padding: 0rem 1rem;
 }
@@ -77,10 +77,14 @@ border: none;
 width: 35vw;
 height: 29vh;
 margin-top: 1rem;
+margin-right: 2rem;
 img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    @media (max-width: 768px){
+        
+    }
 }
 @media (max-width: 900px){
     

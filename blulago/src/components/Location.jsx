@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Driving from '../assets/driving.jpg'
-import Map from './Maps'
+
 
 
 
@@ -21,7 +21,7 @@ Total Drive time from Calais is about 4 hours 30 mins at a leisurely pace in a v
             </LocationPic>
             </FlexPic>
             <LocationContainer>
-           <Map/>
+            <iframe width="100%" height="100%" frameborder="0" title="map" style={{border:0}} src="https://www.google.com/maps/embed/v1/place?q=48.447111%2C%204.513381&key=AIzaSyBm5eKhjz86YHo0v5br56_MFjU9VlnLOnc" allowfullscreen></iframe> 
             </LocationContainer>
             
         </FlexContainer>
@@ -30,8 +30,18 @@ Total Drive time from Calais is about 4 hours 30 mins at a leisurely pace in a v
 
 const FlexContainer = styled.div`
 display: flex;
+height: fit-content;
+overflow: hidden;
+@media (min-width: 901px){
+    height: fit-content;
+     
+}
 @media (max-width: 900px){
 flex-direction: column;
+}
+@media (max-width: 600px){
+    height: fit-content;
+    width: 100vw;
 }
 
 `
@@ -39,21 +49,16 @@ flex-direction: column;
 const LocationContainer = styled.div`
 border: none;
 background-color: #e3dfdb;
-width: 70vw;
 height: 60vh;
 margin: 1rem 1rem;
 margin-right: 2rem;
-img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    @media (max-width: 600px){
+overflow: hidden;
+width: 62vw;
+
+@media (max-width: 600px){
     width: 89vw;
+    margin-top: 0rem;
 }
-
-    
-}
-
 `
 
 const LocationPic = styled.div`
