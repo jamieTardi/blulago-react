@@ -17,6 +17,8 @@ import {makeStyles} from '@material-ui/core/styles'
 import Rules from './pages/Rules'
 
 
+
+
 const useStyles = makeStyles({
   container: {
     display: 'flex',
@@ -38,6 +40,9 @@ function App() {
   const showSidebar = () => {
     setSidebar(prev => !prev)
 }
+
+
+
 
   const fetchHolidays = () => {
         const url = new URL(
@@ -81,7 +86,7 @@ const fetchCart = async() => {
   }
 
   const addToCartAlert = () => {
-    alert('added to cart')
+   alert('Added to basket')
   }
 
   const handleEmptyCart = async() => {
@@ -122,7 +127,7 @@ catch(error){
       <Home sidebar={sidebar} setSidebar={setSidebar}/>
       </Route>
       <Route exact path="/shopHome">
-        <ShopHome cart={cart} handleAddToCart={handleAddToCart} holidays={holidays}/>
+        <ShopHome cart={cart} handleAddToCart={handleAddToCart} holidays={holidays}/> 
       </Route>
       <Route exact path="/gallery">
         <Gallery />
