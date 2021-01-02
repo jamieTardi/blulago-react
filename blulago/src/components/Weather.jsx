@@ -10,7 +10,7 @@ const Weather = () => {
    
     
     useEffect(() => {
-        axios.get('http://api.weatherapi.com/v1/current.json?key=59793abdf2ba474ca3b141104210101&q=Troyes')
+        axios.get('https://api.weatherapi.com/v1/current.json?key=af7640e0a70d46869a5132026210201&q=Troyes')
         .then(data => {
             setGetWeather(data)
             setIsDay(getWeather.data.current.is_day)

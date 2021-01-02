@@ -41,11 +41,13 @@ const NavBar = ({cart, showSidebar}) => {
                     <StyledLine  />
                     </ListAndLine>
                     </Toggle> 
+                    <Link to="rules">
                     <Toggle title="Rules">
                     <ListAndLine >
                     <StyledLine  />
                     </ListAndLine>
                     </Toggle>  
+                    </Link>
                     <Toggle title="Contact Us">
                     <ListAndLine >
                     <StyledLine  />

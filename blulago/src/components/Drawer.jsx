@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 
 
 
-const Drawer = ({showSidebar, sidebar, setSidebar}) => {
+const Drawer = ({showSidebar, sidebar}) => {
     
     
     const navList = [

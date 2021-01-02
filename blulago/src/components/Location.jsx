@@ -7,7 +7,7 @@ import Driving from '../assets/driving.jpg'
 
 
 const Location = () => {
-console.log(process.env)
+
     return (
         <FlexContainer>
             <FlexPic>

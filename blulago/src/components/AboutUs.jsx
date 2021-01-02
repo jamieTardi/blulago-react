@@ -28,14 +28,14 @@ const AboutUs = () => {
                 </p>
                 <button>Contanct Us</button>
             </AboutUsDiv >
-            <div>
+            <PictureContainer>
             <AboutUsPic>
                 <img src={Lake} alt="Lake pic"/>
             </AboutUsPic>
             <AboutUsPic>
                 <Weather/>
             </AboutUsPic>
-            </div>
+            </PictureContainer>
         </FlexContainer>
     )
 }
@@ -70,6 +70,11 @@ padding: 0rem 4rem;
     margin-right: 3rem;
     padding: 0rem 1rem;
 }
+
+`
+
+const PictureContainer = styled.div`
+min-height: 60vh;
 
 `
 

@@ -14,6 +14,7 @@ import Footer from './components/Footer'
 import styled from 'styled-components'
 import Drawer from './components/Drawer'
 import {makeStyles} from '@material-ui/core/styles'
+import Rules from './pages/Rules'
 
 
 const useStyles = makeStyles({
@@ -118,7 +119,7 @@ catch(error){
       
       <Switch location={location} key={location.pathname}>
       <Route path="/" exact>
-      <Home sidebar={sidebar}/>
+      <Home sidebar={sidebar} setSidebar={setSidebar}/>
       </Route>
       <Route exact path="/shopHome">
         <ShopHome cart={cart} handleAddToCart={handleAddToCart} holidays={holidays}/>
@@ -137,6 +138,9 @@ catch(error){
     </Route>
     <Route exact path="/confirmation">
       <Confirmation />
+    </Route>
+    <Route exact path="/rules">
+    <Rules/>
     </Route>
       </Switch>
       <Footer/>
