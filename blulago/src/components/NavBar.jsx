@@ -36,11 +36,13 @@ const NavBar = ({cart, showSidebar}) => {
                     </ListAndLine>
                     </Toggle>
                     </Link>
+                    <Link to="/facilities">
                     <Toggle title="Facilities">
                     <ListAndLine >
                     <StyledLine  />
                     </ListAndLine>
-                    </Toggle> 
+                    </Toggle>
+                    </Link> 
                     <Link to="rules">
                     <Toggle title="Rules">
                     <ListAndLine >

@@ -15,7 +15,7 @@ import styled from 'styled-components'
 import Drawer from './components/Drawer'
 import {makeStyles} from '@material-ui/core/styles'
 import Rules from './pages/Rules'
-
+import Facilities from './pages/Facilities'
 
 
 
@@ -119,9 +119,7 @@ catch(error){
     <StyledApp className="App">
       <GlobalStyles/>
       <Drawer className={classes.container} showSidebar={showSidebar} sidebar={sidebar} setSidebar={setSidebar}/>
-
       <NavBar cart={cart} showSidebar={showSidebar} sidebar={sidebar}/>
-      
       <Switch location={location} key={location.pathname}>
       <Route path="/" exact>
       <Home sidebar={sidebar} setSidebar={setSidebar}/>
@@ -146,6 +144,9 @@ catch(error){
     </Route>
     <Route exact path="/rules">
     <Rules/>
+    </Route>
+    <Route exact path="/facilities">
+      <Facilities/>
     </Route>
       </Switch>
       <Footer/>
