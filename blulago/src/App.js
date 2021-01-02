@@ -51,7 +51,7 @@ function App() {
           .forEach(key => url.searchParams.append(key, params[key]));
       
           let headers = {
-            "X-Authorization": "pk_21211e072b344232b56afb459aa3d9984ce4c91dabee7",
+            "X-Authorization": process.env.REACT_APP_COMMERCE_KEY,
             "Accept": "application/json",
             "Content-Type": "application/json",
         };

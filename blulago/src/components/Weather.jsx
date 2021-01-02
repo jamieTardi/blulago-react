@@ -72,16 +72,16 @@ text-align: center;
 `
 
 const WeatherIcon = styled.img`
-max-width: 120px;
-max-height: 120px;
+max-width: 100px;
+max-height: 100px;
 position: absolute;
 right: 32%;
 bottom: -9%;
+left: 3%;
+top: 30%;
 @media (max-width: 600px){
     max-width: 60px;
     max-height: 60px;
-    left: 3%;
-    top: 30%;
 }
 `
 

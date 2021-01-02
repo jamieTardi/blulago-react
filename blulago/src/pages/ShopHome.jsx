@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import {Link} from 'react-router-dom'
 
 
-const ShopHome = ({cart, handleAddToCart, holidays}) => {
+const ShopHome = ({ handleAddToCart, holidays}) => {
 
 
 
