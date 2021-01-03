@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {TextField, Button} from '@material-ui/core';
 import styled from 'styled-components'
 import axios from 'axios'
@@ -11,7 +11,7 @@ const useStyles = makeStyles({
     root: {
         
         primary:{
-            main: '#000000',
+            main: '#595959',
             
         },
         
@@ -19,10 +19,10 @@ const useStyles = makeStyles({
         
     },
     button:{
-        background: 'hsl(148 90% 41%)',
-        color: '#ffffff',
+        background: '#18DDEB',
+        color: '#595959',
         '&:hover': {
-            backgroundColor: 'hsl(148 90% 21%)',}
+            backgroundColor: 'hsl(184 84% 30%)',}
 
     },
    
@@ -30,15 +30,16 @@ const useStyles = makeStyles({
         backgroundColor: 'inherit',
         border: 'none',
         borderRadius: '5px',
-        marginBottom: '0.5rem'
+        marginBottom: '0.5rem',
+        color:'black'
         
     },
     input: {
-        color: '#ffffff'
+        color: '#595959'
     },
     notchedOutline: {
         borderWidth: "1px",
-        borderColor: "white",
+        borderColor: "#595959",
       },
     focus: {
         color: 'red',
@@ -52,16 +53,16 @@ const theme = createMuiTheme({
     palette: {
         primary:{
             main: '#18DDEB',
-            color: '#fffffff'
+            color: '#595959'
         },
         secondary: {
-            
-            main: '#ffffff',
+            main: '#18DDEB',
+            main: '#595959',
           },
           overrides: {
             MuiButton: {
               raisedPrimary: {
-                color: 'white',
+                color: '#595959',
               },
             },
           }
@@ -71,16 +72,172 @@ const theme = createMuiTheme({
 
 const Form = () => {
     const classes = useStyles()
+    const [status, setStatus] = useState({
+        submitted: false,
+        submitting: false,
+        info: { error: false, msg: null }
+      })
+      const [inputs, setInputs] = useState({
+        email: '',
+        message: ''
+      })
+      const handleServerResponse = (ok, msg) => {
+        if (ok) {
+          setStatus({
+            submitted: true,
+            submitting: false,
+            info: { error: false, msg: msg }
+          })
+          setInputs({
+            email: '',
+            message: ''
+          })
+        } else {
+          setStatus({
+            info: { error: true, msg: msg }
+          })
+        }
+      }
+      const handleOnChange = e => {
+        e.persist()
+        setInputs(prev => ({
+          ...prev,
+          [e.target.id]: e.target.value
+        }))
+        setStatus({
+          submitted: false,
+          submitting: false,
+          info: { error: false, msg: null }
+        })
+      }
+      const handleOnSubmit = e => {
+        e.preventDefault()
+        setStatus(prevStatus => ({ ...prevStatus, submitting: true }))
+        axios({
+          method: 'POST',
+          url: 'https://formspree.io/f/xgeppgqy',
+          data: inputs
+        })
+          .then(response => {
+            handleServerResponse(
+              true,
+              'Thank you, your message has been submitted.'
+            )
+          })
+          .catch(error => {
+            handleServerResponse(false, error.response.data.error)
+          })
+        }
     return (
         <ThemeProvider theme={theme}>
-        <FormContainer className={classes.root}>
+        <FormContainer className={classes.root} noValidate autoComplete="off" onSubmit={handleOnSubmit}>
         <h2>Contact Us</h2>
         <StyledForm>
-           <TextField className="input" id="outlined-basic" label="Name" required variant="outlined" />
-           <TextField  className="input" id="outlined-basic" label="Email" required variant="outlined" />
-           <TextField className="input" id="outlined-basic" label="Phone No." required variant="outlined" />
-           <TextField className="input" multiline="true" rows="15" id="outlined-basic" label="Message" placeholder="Write your message here" required variant="outlined" />
-           <Button variant="contained"  color="primary">Submit</Button> 
+           <TextField  label="Name"
+          id="name"
+          name="name"
+          onChange={handleOnChange}
+          required
+          htmlFor="name"
+          type="text"
+          autoComplete="current-password"
+          variant="outlined"
+          value={inputs.name}
+          className={classes.textField}
+          color="primary"
+          autoFocus="true"
+          size="large"
+          InputLabelProps={{
+            style: { color: '#fff' },
+          }}
+          InputProps={{
+            classes: {
+               root: classes.root,
+               disabled: classes.disabled,
+               notchedOutline: classes.notchedOutline,
+               input: classes.input,
+               focused: classes.focus
+            }
+         }}
+         />
+           <TextField  id="email"
+          htmlFor="email"
+          label="Email"
+          name="email"
+          required
+          onChange={handleOnChange}
+          type="email"
+          value={inputs.email}
+          InputLabelProps={{
+            style: { color: '#fff' },
+          }}
+          type="text"
+          autoComplete="current-email"
+          variant="outlined"
+          className={classes.textField}
+          color="primary"
+          size="large"
+          InputProps={{
+            classes: {
+                root: classes.root,
+                disabled: classes.disabled,
+                notchedOutline: classes.notchedOutline,
+                input: classes.input
+             }
+        }} />
+           <TextField label="Phone no"
+          id="name"
+          name="name"
+          onChange={handleOnChange}
+          required
+          htmlFor="name"
+          type="text"
+          autoComplete="current-password"
+          variant="outlined"
+          value={inputs.name}
+          className={classes.textField}
+          color="primary"
+          autoFocus="true"
+          size="large"
+          InputLabelProps={{
+            style: { color: '#fff' },
+          }}
+          InputProps={{
+            classes: {
+               root: classes.root,
+               disabled: classes.disabled,
+               notchedOutline: classes.notchedOutline,
+               input: classes.input,
+               focused: classes.focus
+            }
+         }}/>
+           <TextField id="message"
+          label="Message"
+          htmlFor="message"
+          onChange={handleOnChange}
+          required
+          value={inputs.message}
+          InputLabelProps={{
+            style: { color: '#fff' },
+          }}
+          type="text"
+          multiline="true"
+          rows="15"
+          variant="outlined"
+          className={classes.textField}
+          color="primary"
+          size="large"
+          InputProps={{
+            classes: {
+                root: classes.root,
+                disabled: classes.disabled,
+                notchedOutline: classes.notchedOutline,
+                input: classes.input
+             }
+        }}/>
+           <Button className={classes.button} type="submit" disabled={status.submitting} variant="outlined">
+           {!status.submitting ? !status.submitted ? 'Submit' : 'Submitted' : 'Submitting...'}
+               </Button> 
         </StyledForm>
     </FormContainer>  
     </ThemeProvider>  
