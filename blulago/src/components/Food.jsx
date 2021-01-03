@@ -30,6 +30,10 @@ const Food = () => {
 const FoodContainer = styled.div`
 width: 100vw;
 height: fit-content;
+@media (max-width: 900px){
+width: 94vw;
+
+}
 `
 
 const Description = styled.div`
@@ -38,6 +42,8 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
+background: #E3DFDB;
+text-align: center;
 
 h3{
     color: #595959;
@@ -47,6 +53,10 @@ h3{
 p{
     padding: 0rem 1rem 1rem 0rem;
 }
+@media (max-width: 900px){
+width: 100%;
+height: 300px;
+}
 
 `
 
@@ -54,6 +64,10 @@ const MenuContainer = styled.div`
 display: flex;
 width: 95%;
 margin: 1rem 4rem 1rem 1rem;
+box-shadow: 5px 5px 15px 5px grey;
+@media (max-width: 900px){
+    flex-direction: column;
+}
 `
 
 const FoodImageDiv = styled.div`
@@ -65,6 +79,10 @@ img{
     object-position: center;
     width: 100%;
     height: 100%;
+}
+@media (max-width: 900px){
+width: 100%;
+height: 300px;
 }
 `
 
