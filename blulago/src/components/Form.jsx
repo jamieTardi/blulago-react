@@ -79,7 +79,8 @@ const Form = () => {
       })
       const [inputs, setInputs] = useState({
         email: '',
-        message: ''
+        message: '',
+        phone: ''
       })
       const handleServerResponse = (ok, msg) => {
         if (ok) {
@@ -90,7 +91,8 @@ const Form = () => {
           })
           setInputs({
             email: '',
-            message: ''
+            message: '',
+            phone: ''
           })
         } else {
           setStatus({
@@ -148,7 +150,7 @@ const Form = () => {
           autoFocus="true"
           size="large"
           InputLabelProps={{
-            style: { color: '#fff' },
+            style: { color: '#595959' },
           }}
           InputProps={{
             classes: {
@@ -169,7 +171,7 @@ const Form = () => {
           type="email"
           value={inputs.email}
           InputLabelProps={{
-            style: { color: '#fff' },
+            style: { color: '#595959' },
           }}
           type="text"
           autoComplete="current-email"
@@ -185,22 +187,22 @@ const Form = () => {
                 input: classes.input
              }
         }} />
-           <TextField label="Phone no"
+           <TextField label="Phone No"
           id="name"
           name="name"
           onChange={handleOnChange}
           required
-          htmlFor="name"
+          htmlFor="phone"
           type="text"
           autoComplete="current-password"
           variant="outlined"
-          value={inputs.name}
+          value={inputs.phone}
           className={classes.textField}
           color="primary"
           autoFocus="true"
           size="large"
           InputLabelProps={{
-            style: { color: '#fff' },
+            style: { color: '#595959' },
           }}
           InputProps={{
             classes: {
@@ -218,7 +220,7 @@ const Form = () => {
           required
           value={inputs.message}
           InputLabelProps={{
-            style: { color: '#fff' },
+            style: { color: '#595959' },
           }}
           type="text"
           multiline="true"
