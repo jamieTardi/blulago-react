@@ -9,8 +9,10 @@ const Food = () => {
     const menu = MenuDetails()
     return (
         <FoodContainer>
+            
             <h2>Our Food Menu</h2>
             <p>Our Food package is avalible to purchase for £150 (GBP only), payable upon arrival. </p>
+            
            {menu.map((menuItem) => 
                <MenuContainer key={uuidv4()}>
                 <FoodImageDiv ><img style={imageLoaded ? {} : {display: 'none'}} onLoad={() => setImageLoaded(true)} src={menuItem.img} alt={menuItem.meal}/></FoodImageDiv>
@@ -29,8 +31,13 @@ const Food = () => {
 }
 
 const FoodContainer = styled.div`
-width: 100vw;
+width: 100%;
 height: fit-content;
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+
 h2{
     text-align: center;
     color: #595959
@@ -43,6 +50,7 @@ width: 94vw;
 p{
     margin-left: 1rem;
 }
+
 }
 `
 
@@ -84,11 +92,15 @@ h3{
 const MenuContainer = styled.div`
 display: flex;
 width: 95%;
-margin: 1rem 4rem 1rem 1rem;
+justify-content: center;
+margin: 1rem 1rem 1rem 0rem;
 box-shadow: 5px 5px 15px 5px grey;
 @media (max-width: 900px){
     flex-direction: column;
     height: fit-content;
+    width: 100%;
+    align-items: center;
+    margin-left: 2rem;
 }
 `
 
@@ -105,7 +117,9 @@ img{
 @media (max-width: 900px){
 width: 100%;
 height: 200px;
+
 }
 `
+
 
 export default Food

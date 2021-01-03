@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const Weather = () => {
     const [getWeather, setGetWeather] = useState(null)
     const [isDay, setIsDay] = useState(1)
-    console.log(getWeather)
+    
     
    
     
@@ -15,7 +15,7 @@ const Weather = () => {
             setGetWeather(data)
             setIsDay(getWeather.data.current.is_day)
         })
-        .catch(error => console.log(error))
+        .catch(error => console.log(error));
         
 
     }, [])

@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import {Button} from '@material-ui/core'
+import {Link} from 'react-router-dom'
 
 
 const Bait = () => {
@@ -15,13 +17,13 @@ const Bait = () => {
             name: 'Boilie',
             weight: '10kg approx',
             description: 'Mainline Cell 15mm/18mm stock dependant',
-            price: '90 Euros per bag, or 50 euros per half',
+            price: '90 Euros per bag, or 50 euros per half. This product comes frozen.',
             img: 'https://www.carpology.net/uploads/cms/blog/1766/3524-banner.jpg'
         },
         {
             name: 'Coppens Pellet',
             weight: '20/25kg approx',
-            description: 'Industry leading carp pellet, supplied by us to help you catch.',
+            description: 'Industry leading carp pellet, supplied by us to help you catch. Limited stock',
             price: '60 Euros per bag, 35 per half bag.',
             img: 'https://www.fishingbaitworld.co.uk/img/product/coppens-premium-coarse-carp-feed-pellets-2mm-25kg-12011824-1600.jpg'
         },
@@ -35,17 +37,18 @@ const Bait = () => {
                 of the pellet. Finally on this lake we allow maize to be used which must be provided by us.
             </p>
             <BaitDetails >
-            {baitObj.map((baitDetails) => (
-                
-                
+            {baitObj.map((baitDetails) => (                
                     <BaitCard key={baitDetails.name}>
                     <ImgDiv>
                     <img src={baitDetails.img} alt={baitDetails.name}/>
                     </ImgDiv>
                     <h3>{baitDetails.name}</h3>
-                    <p>{baitDetails.weight}</p>
-                    <p>{baitDetails.price}</p>
+                    <p>Weight: {baitDetails.weight}</p>
+                    <p>Price: {baitDetails.price}</p>
                     <p>{baitDetails.description}</p>
+                    <Link to="/contact">
+                    <Button variant="contained"  color="primary">Place an Order</Button>
+                    </Link>
                     </BaitCard>
                 ))}
                 </BaitDetails>
@@ -56,27 +59,71 @@ const Bait = () => {
 
 const BaitContainer = styled.div`
 height: fit-content;
+margin-bottom: 2rem;
 
+;
 
 `
 
 const BaitDetails = styled.div`
-width: 98vw;
-height: 45vh;
+width: 100vw;
 display: flex;
+height: fit-content;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 1rem;
+
+@media (max-width: 900px){
+    flex-direction: column;
+}
+
 
 `
 const BaitCard = styled.div`
-max-width: 33vw;
+max-width: 30.5vw;
 display: flex;
 flex-direction: column;
-height: fit-content;
+height: 65vh;
+background: #e3dfdb;
+box-shadow: 5px 5px 15px 5px grey;
+a{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+h3{
+    text-align: center;
+    color: #595959;
+}
+@media (max-width: 900px){
+    min-width: 90vw;
+    margin-top: 1.5rem;
+}
+@media (max-width: 600px){
+    height: 600px;
+    h3{
+        margin-top: 2rem;
+    }
+}
 
 `
 
 const ImgDiv = styled.div`
+height: 30vh;
+
 img{
-    max-width: 33vw;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media (max-width: 600px){
+    img{
+        height: 200px
+    }
 }
 `
 export default Bait
