@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {MenuDetails} from '../lib/MenuDetails'
+import {MenuDetails} from '../../lib/MenuDetails'
 import { v4 as uuidv4 } from 'uuid';
 import styled from 'styled-components'
 

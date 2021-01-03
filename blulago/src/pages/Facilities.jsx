@@ -1,8 +1,9 @@
 import React from 'react'
-import Food from '../components/Food'
+import Food from '../components/Sub-Pages/Food'
 import styled from 'styled-components'
 import cabin from '../assets/cabin.jpg'
 import shower from '../assets/shower.jpg'
+import Bait from '../components/Sub-Pages/Bait'
 
 
 const Facilities = () => {
@@ -27,6 +28,7 @@ const Facilities = () => {
             <img src={cabin} alt="cabin"/>
             <img src={shower} alt="cabin"/>
             </ImageContainer>
+            <Bait/>
             <Food/>
         </FacilitiesContainer>
     )
