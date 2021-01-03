@@ -13,12 +13,18 @@ const Weather = () => {
         axios.get('https://api.weatherapi.com/v1/current.json?key=af7640e0a70d46869a5132026210201&q=Troyes')
         .then(data => {
             setGetWeather(data)
-            setIsDay(getWeather.data.current.is_day)
+        })
+        .catch(error => console.log(error));
+        axios.get('https://api.weatherapi.com/v1/current.json?key=af7640e0a70d46869a5132026210201&q=Troyes')
+        .then(data => {
+            setIsDay(data.data.current.is_day)
         })
         .catch(error => console.log(error));
         
 
+
     }, [])
+    
     return (
         <>
             {getWeather &&(
