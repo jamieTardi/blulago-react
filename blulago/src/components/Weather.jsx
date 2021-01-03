@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const Weather = () => {
     const [getWeather, setGetWeather] = useState(null)
-    const [isDay, setIsDay] = useState(1)
+    const [isDay, setIsDay] = useState(null)
     
     
    
@@ -21,8 +21,6 @@ const Weather = () => {
         })
         .catch(error => console.log(error));
         
-
-
     }, [])
     
     return (
@@ -85,10 +83,11 @@ right: 32%;
 bottom: -9%;
 left: 3%;
 top: 30%;
-@media (max-width: 600px){
+@media (max-width: 1200px){
     max-width: 60px;
     max-height: 60px;
 }
+
 `
 
 export default Weather

@@ -64,7 +64,7 @@ width: 62vw;
 const LocationPic = styled.div`
 border: none;
 width: 35vw;
-height: 29vh;
+height: 28.9vh;
 margin-top: 1rem;
 display: flex;
 background-color: #e3dfdb;

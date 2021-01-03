@@ -81,7 +81,7 @@ min-height: 60vh;
 const AboutUsPic = styled.div`
 border: none;
 width: 35vw;
-height: 29vh;
+height: 28.9vh;
 margin-top: 1rem;
 margin-right: 2rem;
 img{
@@ -109,6 +109,8 @@ img{
 const FlexContainer = styled.div`
 display: flex;
 z-index: 0;
+width: 100vw;
+height: fit-content;
 @media (max-width: 900px){
     flex-direction: column;
 }
