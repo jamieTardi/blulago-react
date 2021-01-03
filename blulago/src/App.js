@@ -16,7 +16,7 @@ import Drawer from './components/Drawer'
 import {makeStyles} from '@material-ui/core/styles'
 import Rules from './pages/Rules'
 import Facilities from './pages/Facilities'
-
+import Contact from './pages/Contact'
 
 
 const useStyles = makeStyles({
@@ -147,6 +147,9 @@ catch(error){
     </Route>
     <Route exact path="/facilities">
       <Facilities/>
+    </Route>
+    <Route exact path="/contact">
+    <Contact/>
     </Route>
       </Switch>
       <Footer/>

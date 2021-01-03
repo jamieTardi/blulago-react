@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 
 
 
-const Drawer = ({showSidebar, sidebar}) => {
+const Drawer = ({sidebar}) => {
     
     
     const navList = [
@@ -15,7 +15,7 @@ const Drawer = ({showSidebar, sidebar}) => {
         {text: "Online Booking", icon: <Loyalty/>, path:"/shopHome"}, 
         {text: "Facilities", icon: <Bathtub/>, path:"/facilities"}, 
         {text: "Rules", icon: <Gavel/>, path:"/rules"}, 
-        {text: "Contact Us", icon: <ContactSupport/>, path:"/contactUs"}]
+        {text: "Contact Us", icon: <ContactSupport/>, path:"/contact"}]
     return (
         <>
             <SidebarContainer>
@@ -51,10 +51,17 @@ const SidebarContainer = styled.div`
 const FlexList = styled.div`
 display: flex;
 justify-content: space-between;
+align-items: center;
 margin: 1.3rem 0.3rem;
+height: 3vh;
+border-radius: 5px;
 &:hover{
     cursor: pointer;
+    height: 60px;
+    background: HSL(0 0% 70%);
 }
+
+
 
 `
 
@@ -79,7 +86,8 @@ align-items: center;
 const NavMenuItems = styled.ul`
 display: flex;
 flex-direction: column;
-align-items: space-between;
+
+
 
 &:first-child{
     margin-top: 1rem;

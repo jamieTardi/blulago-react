@@ -50,11 +50,13 @@ const NavBar = ({cart, showSidebar}) => {
                     </ListAndLine>
                     </Toggle>  
                     </Link>
+                    <Link to="/contact">
                     <Toggle title="Contact Us">
                     <ListAndLine >
                     <StyledLine  />
                     </ListAndLine>
-                    </Toggle>   
+                    </Toggle> 
+                    </Link>  
                     <IconButton component={Link}  to="cart" aria-label="Show Cart Items" color="primary" >
                     <Badge badgeContent={numberItems} color="secondary"></Badge>
                     <ShoppingCart className="cart"/>
