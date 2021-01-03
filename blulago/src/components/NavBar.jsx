@@ -37,7 +37,7 @@ const NavBar = ({cart, showSidebar}) => {
                     </Toggle>
                     </Link>
                     <Link to="/facilities">
-                    <Toggle title="Facilities">
+                    <Toggle title="Facilities & Food">
                     <ListAndLine >
                     <StyledLine  />
                     </ListAndLine>
