@@ -1,11 +1,12 @@
 import React from 'react'
-import {MenuDetails} from '../lib/MenuDetails'
+import Food from '../components/Food'
+
 
 const Facilities = () => {
-console.log(MenuDetails())
+
     return (
         <div>
-            
+            <Food/>
         </div>
     )
 }
