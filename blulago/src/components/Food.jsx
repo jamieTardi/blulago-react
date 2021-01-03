@@ -11,16 +11,17 @@ const Food = () => {
 
     return (
         <FoodContainer>
-           {menu.map((menuItem) => (
-               <div key={uuidv4()}>
+           {menu.map((menuItem) => 
+               
+               <MenuContainer key={uuidv4()}>
                 <FoodImageDiv><img style={imageLoaded ? {} : {display: 'none'}} onLoad={() => setImageLoaded(true)} src={menuItem.img} alt={menuItem.meal}/></FoodImageDiv>
-                <div>
+                <Description>
                     <h3>{menuItem.meal}</h3>
                     <p>Served on {menuItem.day}</p>
                     <p>{menuItem.description}</p>
-                </div>
-                </div>
-                ))} 
+                </Description>
+                </MenuContainer>
+                )} 
 
         </FoodContainer>
     )
@@ -28,7 +29,31 @@ const Food = () => {
 
 const FoodContainer = styled.div`
 width: 100vw;
-height: 100vh;
+height: fit-content;
+`
+
+const Description = styled.div`
+width: 50vw;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+h3{
+    color: #595959;
+    margin-bottom: 1rem
+}
+
+p{
+    padding: 0rem 1rem 1rem 0rem;
+}
+
+`
+
+const MenuContainer = styled.div`
+display: flex;
+width: 95%;
+margin: 1rem 4rem 1rem 1rem;
 `
 
 const FoodImageDiv = styled.div`
