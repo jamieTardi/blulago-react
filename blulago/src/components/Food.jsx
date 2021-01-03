@@ -7,18 +7,18 @@ import styled from 'styled-components'
 const Food = () => {
     const [imageLoaded, setImageLoaded] = useState(false)
     const menu = MenuDetails()
-    console.log(menu)
-
     return (
         <FoodContainer>
+            <h2>Our Food Menu</h2>
+            <p>Our Food package is avalible to purchase for £150 (GBP only), payable upon arrival </p>
            {menu.map((menuItem) => 
-               
                <MenuContainer key={uuidv4()}>
                 <FoodImageDiv><img style={imageLoaded ? {} : {display: 'none'}} onLoad={() => setImageLoaded(true)} src={menuItem.img} alt={menuItem.meal}/></FoodImageDiv>
                 <Description>
                     <h3>{menuItem.meal}</h3>
                     <p>Served on {menuItem.day}</p>
                     <p>{menuItem.description}</p>
+                    <p>Pudding included (varies from day to day)</p> 
                 </Description>
                 </MenuContainer>
                 )} 
@@ -30,9 +30,18 @@ const Food = () => {
 const FoodContainer = styled.div`
 width: 100vw;
 height: fit-content;
+h2{
+    text-align: center;
+    color: #595959
+}
+p{
+    text-align: center;
+}
 @media (max-width: 900px){
 width: 94vw;
-
+p{
+    margin-left: 1rem;
+}
 }
 `
 
