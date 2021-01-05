@@ -100,7 +100,7 @@ p{
 const ShopContainer = styled.div`
 width: 100vw;
 height: auto;
-padding: 2rem 0rem
+padding: 2rem 0rem;
 `
 
 const Card = styled.div`
@@ -147,12 +147,12 @@ div{
 @media(max-width: 1000px){
     flex: 1 0 21%;
     min-width: 39vw;
-    min-height: 600px;
-    height: fit-content;
+    height: 900px;
 };
 @media(max-width: 800px){
     flex: 1 2 50%;
     min-width: 37vw;
+    
 };
 @media(max-width: 670px){
     flex: 1 2 50%;
