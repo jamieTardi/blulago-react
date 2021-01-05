@@ -225,6 +225,11 @@ align-items: center;
 h3{
     color: black;
 }
+
+@media (max-width: 600px){
+    width: 60vw;
+    left: 20%;
+}
 `
 
 export default ShopHome
