@@ -40,7 +40,7 @@ const Drawer = ({sidebar}) => {
 const SidebarContainer = styled.div`
 .active{
     display: block;
-    z-index: 1;
+    z-index: 1000;
 }
 .hide{
     display: none;
