@@ -1,9 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
+import Emoji from 'a11y-react-emoji'
+import {Button} from '@material-ui/core'
 
-
-const ShopHome = ({ handleAddToCart, holidays}) => {
+const ShopHome = ({ handleAddToCart, holidays, hideModal, setHideModal}) => {
 
 
 
@@ -12,6 +13,14 @@ const ShopHome = ({ handleAddToCart, holidays}) => {
 
     return (
         <>
+        <ModalContainer>
+        <Modal className={hideModal ? '' : 'hide'}>
+           <h3><Emoji symbol="🛒" label="cart" />Added to cart! <Emoji symbol="🛒" label="cart" /></h3>
+            <Button variant="contained" color="primary" onClick={() => setHideModal(false)}>Click to continue</Button>
+       </Modal>
+        <ModalBackground className={hideModal ? '' : 'hide'} onClick={() => setHideModal(false)}>
+        </ModalBackground>
+        </ModalContainer>
         <BookingBlurb>
         <h2>Booking</h2>
         <p>Below is our online booking system. To book a slot check the date you wish to travel and click add to cart. 
@@ -175,6 +184,46 @@ img{
     height: 40%;
     object-fit: cover;
     
+}
+`
+
+const ModalContainer = styled.div`
+.hide{
+    display: none;
+}
+`
+
+const ModalBackground = styled.div`
+z-index: 1;
+height: 100vh;
+position: fixed;
+width: 100vw;
+background: black;
+opacity: 0.3;
+top: 0;
+.hide{
+    display: none;
+}
+
+`
+
+const Modal = styled.div`
+width: 25vw;
+height: 15vh;
+background: hsl(100 0% 100%);
+opacity: 1;
+z-index: 2;
+position: fixed;
+left: 35%;
+top: 45%;
+border-radius: 5px;
+display: flex;
+justify-content: space-around;
+flex-direction: column;
+align-items: center;
+
+h3{
+    color: black;
 }
 `
 

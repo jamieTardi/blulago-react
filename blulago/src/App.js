@@ -32,6 +32,7 @@ function App() {
   const [order, setOrder] = useState({})
   const [errorMessage, setErrorMessage] = useState('')
   const [sidebar, setSidebar] = useState(false)
+  const [hideModal, setHideModal] = useState(false)
   const location = useLocation();
   const classes = useStyles()
 
@@ -86,7 +87,7 @@ const fetchCart = async() => {
   }
 
   const addToCartAlert = () => {
-   alert('Added to basket')
+   setHideModal(true)
   }
 
   const handleEmptyCart = async() => {
@@ -125,7 +126,7 @@ catch(error){
       <Home sidebar={sidebar} setSidebar={setSidebar}/>
       </Route>
       <Route exact path="/shopHome">
-        <ShopHome cart={cart} handleAddToCart={handleAddToCart} holidays={holidays}/> 
+        <ShopHome cart={cart} handleAddToCart={handleAddToCart} holidays={holidays} hideModal={hideModal} setHideModal={setHideModal}/> 
       </Route>
       <Route exact path="/gallery">
         <Gallery />
