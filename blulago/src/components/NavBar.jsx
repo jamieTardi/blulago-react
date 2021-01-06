@@ -96,13 +96,13 @@ const StyledNav =styled.nav`
       
 const StyledDiv = styled.div`
 display: flex;
-width: 20vw
+width: 20vw;
 
 `
 
 const StyledLogo = styled.img`
 min-width: 100%;
-min-height: 100%
+min-height: 100%;
 `
 
 const StyledUl = styled.ul`

@@ -3,10 +3,10 @@ import {Ruleset} from '../lib/Ruleset'
 import styled from 'styled-components'
 
 
-const Rules = () => {
+const Rules = ({closeMenu}) => {
     const theRules = Ruleset()
     return (
-        <RulesContainer>
+        <RulesContainer onClick={closeMenu}>
             <TextContainer>
             <h2>Rules</h2>
             <p>These are the fishery rules, 

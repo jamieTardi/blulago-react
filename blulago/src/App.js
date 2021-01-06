@@ -101,6 +101,10 @@ const refreshCart = async() => {
   setCart(newCart)
 }
 
+const closeMenu = () => {
+  setSidebar(false)
+}
+
 const handleCaptureCheckout = async (checkoutTokenId, newOrder) => {
 try{
   const incomingOrder = await commerce.checkout.capture(checkoutTokenId, newOrder)
@@ -123,19 +127,19 @@ catch(error){
       <NavBar cart={cart} showSidebar={showSidebar} sidebar={sidebar}/>
       <Switch location={location} key={location.pathname}>
       <Route path="/" exact>
-      <Home sidebar={sidebar} setSidebar={setSidebar}/>
+      <Home sidebar={sidebar} setSidebar={setSidebar} closeMenu={closeMenu}/>
       </Route>
       <Route exact path="/shopHome">
-        <ShopHome cart={cart} handleAddToCart={handleAddToCart} holidays={holidays} hideModal={hideModal} setHideModal={setHideModal}/> 
+        <ShopHome cart={cart} handleAddToCart={handleAddToCart} holidays={holidays} hideModal={hideModal} setHideModal={setHideModal} closeMenu={closeMenu}/> 
       </Route>
       <Route exact path="/gallery">
-        <Gallery />
+        <Gallery closeMenu={closeMenu} />
       </Route>
       <Route exact path="/cart">
-        <Cart  cart={cart} setCart={setCart} handleEmptyCart={handleEmptyCart}/>
+        <Cart  cart={cart} setCart={setCart} handleEmptyCart={handleEmptyCart} closeMenu={closeMenu}/>
       </Route>
       <Route exact path="/checkout">
-        <Checkout cart={cart} order={order} onCaptureCheckout={handleCaptureCheckout} error={errorMessage}/>
+        <Checkout cart={cart} order={order} onCaptureCheckout={handleCaptureCheckout} error={errorMessage} closeMenu={closeMenu}/>
       </Route>
     <Route exact path="/terms">
     <Terms/>
@@ -144,13 +148,13 @@ catch(error){
       <Confirmation />
     </Route>
     <Route exact path="/rules">
-    <Rules/>
+    <Rules closeMenu={closeMenu}/>
     </Route>
     <Route exact path="/facilities">
-      <Facilities/>
+      <Facilities closeMenu={closeMenu}/>
     </Route>
     <Route exact path="/contact">
-    <Contact/>
+    <Contact closeMenu={closeMenu}/>
     </Route>
       </Switch>
       <Footer/>

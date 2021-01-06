@@ -199,7 +199,7 @@ const Form = () => {
           value={inputs.phone}
           className={classes.textField}
           color="primary"
-          autoFocus="true"
+          autoFocus="false"
           size="large"
           InputLabelProps={{
             style: { color: '#595959' },

@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import Emoji from 'a11y-react-emoji'
 import {Button} from '@material-ui/core'
 
-const ShopHome = ({ handleAddToCart, holidays, hideModal, setHideModal}) => {
+const ShopHome = ({ handleAddToCart, holidays, hideModal, setHideModal, closeMenu}) => {
 
 
 
@@ -12,7 +12,7 @@ const ShopHome = ({ handleAddToCart, holidays, hideModal, setHideModal}) => {
 
 
     return (
-        <>
+        <div onClick={closeMenu}>
         <ModalContainer>
         <Modal className={hideModal ? '' : 'hide'}>
            <h3><Emoji symbol="🛒" label="cart" />Added to cart! <Emoji symbol="🛒" label="cart" /></h3>
@@ -53,7 +53,7 @@ const ShopHome = ({ handleAddToCart, holidays, hideModal, setHideModal}) => {
     </CardContainer>
     
         </ShopContainer>
-        </>
+        </div>
         
     )
 }

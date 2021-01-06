@@ -57,9 +57,9 @@ height: 3vh;
 border-radius: 5px;
 &:hover{
     cursor: pointer;
-    height: 60px;
     background: HSL(0 0% 70%);
 }
+
 
 
 
@@ -87,7 +87,11 @@ const NavMenuItems = styled.ul`
 display: flex;
 flex-direction: column;
 
-
+a{
+    &:hover{
+    background: HSL(0 0% 70%);
+    }
+}
 
 &:first-child{
     margin-top: 1rem;

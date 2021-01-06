@@ -4,9 +4,9 @@ import styled from 'styled-components'
 import contactImg from '../assets/contactImg.svg'
 
 
-const Contact = () => {
+const Contact = ({closeMenu}) => {
     return (
-        <ContactContainer>
+        <ContactContainer onClick={closeMenu}>
             <Form/>
         <img src={contactImg} alt="Contact Image"/>
         </ContactContainer>

@@ -7,11 +7,11 @@ import {Link} from 'react-router-dom'
 import cartPic from '../assets/full-cart.svg'
 
 
-const Cart = ({cart, handleEmptyCart}) => {
+const Cart = ({cart, handleEmptyCart, closeMenu}) => {
     return (
-        <>
+        <div onClick={closeMenu}>
         {cart.line_items.length !== 0 ?
-        <CartContainer>
+        <CartContainer >
             <h2>Your Cart</h2>
             <img src={cartPic} alt="cart pic"/>
             <h4>This Booking is for:</h4>
@@ -37,7 +37,7 @@ const Cart = ({cart, handleEmptyCart}) => {
                 
             </CartContainer>
             }
-        </>
+        </div>
     )
 }
 

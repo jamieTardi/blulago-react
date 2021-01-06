@@ -6,10 +6,10 @@ import shower from '../assets/shower.jpg'
 import Bait from '../components/Sub-Pages/Bait'
 
 
-const Facilities = () => {
+const Facilities = ({closeMenu}) => {
 
     return (
-        <FacilitiesContainer>
+        <FacilitiesContainer onClick={closeMenu}>
             <h2>On Site Facilities</h2>
             <p>Here at Blu Lago we pride ourselves on having 
                 industry leading facilities for everything you 

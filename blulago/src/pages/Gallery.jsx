@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import ImageGallery from 'react-image-gallery';
 import './gallery.css'
 
-const Gallery = () => {
+const Gallery = ({closeMenu}) => {
 
 
     const images = [
@@ -24,7 +24,7 @@ const Gallery = () => {
           },
     ]
     return (
-        <GalleryContainer>
+        <GalleryContainer onClick={closeMenu}>
             <GalleryBlurb>
             <h2>Gallery</h2>
             <p>Take a look at our gallery, and see what we have to 

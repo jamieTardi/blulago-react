@@ -9,7 +9,7 @@ import styled from 'styled-components'
 
 
 const steps = ['Shipping Address', 'Payment Details']
-const Checkout = ({cart, order, error, onCaptureCheckout}) => {
+const Checkout = ({cart, order, error, onCaptureCheckout, closeMenu}) => {
     const [activeStep, setActiveStep] = useState(0)
     const [checkoutToken, setCheckoutToken] = useState(null)
     const [shippingData, setShippingData] = useState({})
@@ -17,7 +17,6 @@ const Checkout = ({cart, order, error, onCaptureCheckout}) => {
     const classes = useStyles()
     const nextStep = () => setActiveStep((prev) => ++prev )
     const backStep = () => setActiveStep((prev) => --prev)
-
     const next = (data) => {
         setShippingData(data)
         nextStep()
@@ -27,20 +26,15 @@ const Checkout = ({cart, order, error, onCaptureCheckout}) => {
         const generateToken = async () => {
             try{
              const token = await commerce.checkout.generateToken(cart.id, {type: 'cart'})
-             
-            
              setCheckoutToken(token)
-             
             }
             catch(error){
- 
             }
- 
         }
         generateToken()
     }, [cart])
     return (
-        <StyledCheckout>
+        <StyledCheckout onClick={closeMenu}>
         <div className={classes.toolbar}/>
         <main className={classes.layout}>
             <Paper className={classes.paper}>
@@ -54,16 +48,13 @@ const Checkout = ({cart, order, error, onCaptureCheckout}) => {
                 </Stepper>
                 {activeStep ===  steps.length ? <Confirmation /> : checkoutToken && <Form />}
                 </Paper>
-        </main>
-            
+        </main>  
         </StyledCheckout>
     )
 }
-
 const StyledCheckout = styled.div`
     min-height: 80vh;
     width: 100vw;
-
 `
 
 export default Checkout
