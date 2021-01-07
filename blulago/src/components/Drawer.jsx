@@ -86,7 +86,7 @@ background-color: #EEEEEE;
 position: fixed;
 top: 0%;
 height: 100vh;
-transition: all 0.45s;
+transition: ease-in-out 0.55s;
 width: 35vw;
 overflow: hidden;
 z-index: 10;

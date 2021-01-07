@@ -13,7 +13,7 @@ const Location = () => {
             <FlexPic>
             <LocationPic>
                 <h4>Getting Here</h4>
-                <p>The Best way to get to the lake is to drive from Calais (ferry or eurotunnel). Once you get off the ferry head to A26, when you get on the A26 continue all the way to Reims, this is a good 2 hours 30 min and the bulk of the drive. When you get to reims you will see signs for the A4 signposted Troyes. Take exit 21 for Vallée de l'Aube, then follow the D441 until the D75 then the D180. This will eventually lead you to Rue des Carriéres. 
+                <p className="location-para">The Best way to get to the lake is to drive from Calais (ferry or eurotunnel). Once you get off the ferry head to A26, when you get on the A26 continue all the way to Reims, this is a good 2 hours 30 min and the bulk of the drive. When you get to reims you will see signs for the A4 signposted Troyes. Take exit 21 for Vallée de l'Aube, then follow the D441 until the D75 then the D180. This will eventually lead you to Rue des Carriéres. 
 Total Drive time from Calais is about 4 hours 30 mins at a leisurely pace in a van.</p>
             </LocationPic>
             <LocationPic>
@@ -94,6 +94,13 @@ img{
  width: 93vw;
  height: fit-content;
 
+}
+@media (max-width: 1021px){
+    .location-para{
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #18ddeb #E3DFDB;
+    }
 }
 @media (max-width: 600px){
     height: fit-content;

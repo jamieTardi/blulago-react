@@ -8,7 +8,7 @@ const MainPic = ({sidebar}) => {
     const variants = {
         visible: { opacity: 1,
             transition: {
-                duration: 1.5,
+                duration: 2,
                 staggerChildren: 2,
                 when: 'beforeChildren'
             }},

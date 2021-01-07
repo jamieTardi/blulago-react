@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Lake from '../assets/lake-pic-hero.jpeg'
 import Weather from './Weather'
+import {Link} from 'react-router-dom'
 
 
 
@@ -25,7 +26,9 @@ const AboutUs = () => {
                     spot to catch in the evening or a good local bar
                      we can help. 
                 </p>
-                <button>Contanct Us</button>
+                <Link to="/contact">
+                <button >Contact Us</button>
+                </Link>
             </AboutUsDiv >
             <PictureContainer>
             <AboutUsPic>
