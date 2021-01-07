@@ -6,11 +6,9 @@ import Location from '../components/Location'
 
 
 
-const Home = ({sidebar ,setSidebar}) => {
+const Home = ({sidebar ,setSidebar, closeMenu}) => {
 
-const closeMenu = () => {
-    setSidebar(false)
-}
+
     return (
         <div onClick={closeMenu}>
             <MainPic sidebar={sidebar} />
