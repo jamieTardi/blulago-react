@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import Lake from '../assets/lake-pic-hero.jpeg'
-import LakeTwo from '../assets/picture6.JPG'
 import Weather from './Weather'
 
 

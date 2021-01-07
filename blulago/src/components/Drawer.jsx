@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 
 
 
-const Drawer = ({sidebar}) => {
+const Drawer = ({sidebar, setSidebar}) => {
     
     
     const navList = [
@@ -34,7 +34,7 @@ const Drawer = ({sidebar}) => {
             <Sidebar className={sidebar ? 'active' : 'hide'}>
                 <NavMenuItems>
                 {navList.map((listItem, index) => (
-                    <Link key={index} to={listItem.path}>
+                    <Link key={index} to={listItem.path} onClick={() => setSidebar(false)}>
                     <FlexList key={index}>
                     <li >{listItem.text}</li><li>{listItem.icon}</li>
                     </FlexList>
@@ -51,12 +51,17 @@ const Drawer = ({sidebar}) => {
 
 const SidebarContainer = styled.div`
 .active{
+    @media (max-width: 600px){
     display: block;
     z-index: 1000;
     left: 0;
 }
+}
 .hide{
+    width: 0vw;
+    @media (max-width: 600px){
     left: -250px;
+    }
 }
 
 `
@@ -73,10 +78,6 @@ border-radius: 5px;
     cursor: pointer;
     background: HSL(0 0% 70%);
 }
-
-
-
-
 `
 
 
@@ -93,9 +94,11 @@ justify-content: start;
 align-items: center;
 
 .nav-menu{
+    width: 0px;
+    @media (max-width: 600px){
    width: 250px;
    height: 100vh;
-   
+    }
 }
 
 `
