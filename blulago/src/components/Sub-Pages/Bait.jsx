@@ -84,9 +84,10 @@ const BaitCard = styled.div`
 max-width: 30.5vw;
 display: flex;
 flex-direction: column;
-height: 65vh;
+height: 90vh;
 background: #e3dfdb;
 box-shadow: 5px 5px 15px 5px grey;
+position: relative;
 a{
     width: 100%;
     display: flex;
@@ -95,12 +96,19 @@ a{
     margin-top: 1rem;
 }
 
+button{
+  position: absolute;
+  top: 90%;
+  z-index: 2;
+}
+
 h3{
     text-align: center;
     color: #595959;
 }
 @media (max-width: 900px){
     min-width: 90vw;
+    height: fit-content;
     margin-top: 1.5rem;
 }
 @media (max-width: 600px){
