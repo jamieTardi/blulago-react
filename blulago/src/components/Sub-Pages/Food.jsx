@@ -65,11 +65,11 @@ text-align: center;
 
 h3{
     color: #595959;
-    margin-bottom: 1rem
+    margin-bottom: 0rem
 }
 
 p{
-    padding: 0rem 1rem 1rem 0rem;
+    padding: 0rem 0rem 0rem 0rem;
     
 }
 @media (max-width: 900px){
@@ -92,6 +92,7 @@ h3{
 const MenuContainer = styled.div`
 display: flex;
 width: 95%;
+max-height: 40vh;
 justify-content: center;
 margin: 1rem 1rem 1rem 0rem;
 box-shadow: 5px 5px 15px 5px grey;
@@ -106,17 +107,20 @@ box-shadow: 5px 5px 15px 5px grey;
 
 const FoodImageDiv = styled.div`
 width: 50vw;
-height: 35vh;
+height: 40vh;
 overflow: hidden;
 img{
     object-fit: cover;
-    object-position: center;
+    max-height: 100% ;
     width: 100%;
-    height: 100%;
+    @media (max-width: 600px){
+        height: 450px;
+    }
+
 }
 @media (max-width: 900px){
 width: 100%;
-height: 200px;
+height: 300px;
 
 }
 `

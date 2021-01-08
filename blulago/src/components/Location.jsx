@@ -95,7 +95,7 @@ img{
  height: fit-content;
 
 }
-@media (max-width: 1021px){
+@media (max-width: 1601px){
     .location-para{
     overflow-y: scroll;
     scrollbar-width: thin;
