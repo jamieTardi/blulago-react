@@ -51,7 +51,7 @@ const AboutUsDiv = styled.div`
 border: none;
 background-color: #e3dfdb;
 width: 70vw;
-height: 60vh;
+height: 60.5vh;
 margin: 1rem 1rem;
 display: flex;
 flex-direction: column;
@@ -59,6 +59,9 @@ justify-content: space-around;
 align-items: center;
 text-align: center;
 padding: 0rem 4rem;
+@media (max-width: 1000px){
+    height: fit-content;
+}
 @media (max-width: 900px){
     min-width: 93vw;
     height: fit-content;

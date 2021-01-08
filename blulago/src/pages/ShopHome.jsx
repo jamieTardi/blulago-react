@@ -114,7 +114,7 @@ padding: 2rem 0rem;
 
 const Card = styled.div`
 max-width: 28vw;
-max-height: 60vh;
+max-height: 70vh;
 flex: 1 0 30%;
 border: none;
 display: flex;
