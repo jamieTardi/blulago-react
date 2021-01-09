@@ -55,6 +55,10 @@ margin-right: 2rem;
 overflow: hidden;
 width: 62vw;
 
+@media (max-width: 900px){
+    width: 93vw;
+}
+
 @media (max-width: 600px){
     width: 89vw;
     margin-top: 0rem;

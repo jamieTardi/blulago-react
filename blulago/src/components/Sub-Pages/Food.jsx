@@ -111,10 +111,10 @@ height: 40vh;
 overflow: hidden;
 img{
     object-fit: cover;
-    max-height: 100% ;
+    height: 100% ;
     width: 100%;
     @media (max-width: 600px){
-        height: 450px;
+        height: 250px;
     }
 
 }

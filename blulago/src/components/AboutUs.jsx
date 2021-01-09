@@ -86,7 +86,7 @@ min-height: 60vh;
 const AboutUsPic = styled.div`
 border: none;
 width: 35vw;
-height: 28.9vh;
+height: 29.18vh;
 margin-top: 1rem;
 margin-right: 2rem;
 img{
