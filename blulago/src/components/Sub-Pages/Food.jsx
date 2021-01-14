@@ -98,7 +98,7 @@ margin: 1rem 1rem 1rem 0rem;
 box-shadow: 5px 5px 15px 5px grey;
 @media (max-width: 900px){
     flex-direction: column;
-    height: fit-content;
+    min-height: 500px;
     width: 100%;
     align-items: center;
     margin-left: 2rem;
@@ -114,13 +114,13 @@ img{
     height: 100% ;
     width: 100%;
     @media (max-width: 600px){
-        height: 250px;
+        height: 350px;
     }
 
 }
 @media (max-width: 900px){
 width: 100%;
-height: 300px;
+height: 400px;
 
 }
 `
